@@ -113,7 +113,10 @@
 	<ShoppingBasket class="absolute right-0 top-0 z-10" />
 	<div id="basket" class="absolute right-0 top-4 h-auto w-1/3 text-right">
 		<p class="bg-secondary/75 p-1 text-right font-bold text-secondary-foreground">
-			{sepettekiParola}
+			{#each sepettekiParola as parola}
+				}
+				{parola}
+			{/each}
 		</p>
 	</div>
 {/if}

@@ -96,10 +96,12 @@
 	}
 
 	async function clipboardaKopyala(parol: string) {
-		return await navigator.clipboard.writeText(parol);
+		await navigator.clipboard.writeText(parol);
 	}
 	async function clipboardakiIleAyni(parol: string): Promise<boolean> {
 		const clipboardkiParola = await navigator.clipboard.readText();
+		console.log('ℹ  ~ clipboardakiIleAyni ~ clipboardkiParola:', clipboardkiParola);
+
 		return clipboardkiParola === parol;
 	}
 	function sepeteTiklama(p: string) {

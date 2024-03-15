@@ -284,14 +284,14 @@
 		@apply border-gray-200 text-right text-sm;
 	}
 	#basket > ul {
-		@apply font-bold text-secondary-foreground;
+		@apply cursor-pointer font-bold text-secondary-foreground;
 	}
 	#basket > ul > li:first-child {
 		@apply block w-full border-b border-gray-200 px-4 py-2;
-		@apply cursor-pointer rounded-t-lg bg-primary text-primary-foreground;
+		@apply rounded-t-lg bg-primary text-primary-foreground;
 	}
 	#basket > ul > li {
-		@apply block w-full cursor-pointer border-b border-gray-200 px-4 py-2;
+		@apply block w-full  border-b border-gray-200 px-4 py-2;
 		@apply hover:bg-gray-100 hover:text-accent-foreground;
 		@apply focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700;
 	}

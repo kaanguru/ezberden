@@ -277,7 +277,7 @@
 	}
 	#basket > ul > li {
 		@apply block w-full  border-b border-gray-200 px-4 py-2;
-		@apply hover:bg-gray-100 hover:text-accent-foreground;
+		@apply hover:bg-gray-100 hover:text-accent;
 		@apply focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent;
 	}
 	#basket > ul li:last-child {

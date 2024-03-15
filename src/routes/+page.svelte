@@ -26,7 +26,7 @@
 	let direncAlertAlaniAcik = false;
 	let fotoAlertAlaniAcik = false;
 	let crackTimes: string[] = [];
-
+	let active = false;
 	$: secenekler = { kelimeSayisi: kelmSays, standart: standrt, araliklar: aralklr };
 	$: uretilenParola = parolaUret(secenekler);
 	$: sepettekiParolalar = [];

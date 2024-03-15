@@ -47,9 +47,9 @@
 		if (sepettekiSon !== uretilenParola) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
-		/* if (clipboardakiIleAyni(sepettekiSon)) {
+		if (await clipboardakiIleAyni(sepettekiSon)) {
 			return;
-		} */
+		}
 		clipboardaKopyala(sepettekiSon);
 		toast.success('panoya kopyalandı', {
 			description: `Ezberlenecek parolanız: 
@@ -98,7 +98,7 @@
 	async function clipboardaKopyala(parol: string) {
 		await navigator.clipboard.writeText(parol);
 	}
-	async function clipboardakiIleAyni(parol: string): boolean {
+	async function clipboardakiIleAyni(parol: string): Promise<boolean> {
 		const clipboardkiParola = await navigator.clipboard.readText();
 		return clipboardkiParola === parol;
 	}

@@ -237,7 +237,7 @@
 	{#if direncAlertAlaniAcik}
 		<div class="mx-auto max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
 			<h4 class="mx-auto scroll-m-20 text-xl font-semibold tracking-tight">
-				{sepettekiParolalar}
+				{sepettekiParolalar[sepettekiParolalar.length - 1]}
 			</h4>
 			<p class="text-sm text-muted-foreground">saldırıya ne kadar dayanabilecek?</p>
 			<Table.Root>

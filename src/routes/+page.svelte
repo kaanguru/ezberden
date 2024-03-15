@@ -286,7 +286,7 @@
 	#basket > ul {
 		@apply bg-secondary/75 p-2  font-bold text-secondary-foreground;
 	}
-	#basket > ul > li {
+	#basket > ul > li:first-child {
 		@apply block w-full border-b border-gray-200 px-4 py-2;
 		@apply cursor-pointer rounded-t-lg bg-blue-700 text-white;
 	}

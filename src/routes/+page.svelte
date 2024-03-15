@@ -113,8 +113,8 @@
 		<ShoppingBasket class="end-45 absolute top-1 z-10 text-accent" />
 		<ul>
 			{#each sepettekiParolalar as parola}
-				<li on:click={sepeteTiklama(parola)}>
-					<button>{parola}</button>
+				<li>
+					<button on:click={sepeteTiklama(parola)}>{parola}</button>
 				</li>
 			{/each}
 		</ul>

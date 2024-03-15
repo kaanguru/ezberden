@@ -51,7 +51,7 @@
 		clipboardaKopyala(sepettekiSon);
 		toast.success('panoya kopyalandı', {
 			description: `Ezberlenecek parolanız: 
-				${sepettekiParolalar[sepettekiParolalar.length - 1]}`
+				${sepettekiSon}`
 		});
 	}
 

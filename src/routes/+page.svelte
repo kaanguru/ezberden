@@ -46,8 +46,7 @@
 		if (sepettekiParolalar[sepettekiParolalar.length - 1] !== uretilenParola) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
-		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
-		// Show the alert
+		clipboardaKopyala(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		toast.success('panoya kopyalandı', {
 			description: `Ezberlenecek parolanız: 
 				${sepettekiParolalar[sepettekiParolalar.length - 1]}`

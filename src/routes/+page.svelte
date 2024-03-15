@@ -288,7 +288,7 @@
 	}
 	#basket > ul > li:first-child {
 		@apply block w-full border-b border-gray-200 px-4 py-2;
-		@apply rounded-t-lg  bg-primary text-primary-foreground;
+		@apply rounded-t-lg;
 	}
 	#basket > ul > li {
 		@apply block w-full  border-b border-gray-200 px-4 py-2;

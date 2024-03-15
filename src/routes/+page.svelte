@@ -28,7 +28,7 @@
 
 	$: secenekler = { kelimeSayisi: kelmSays, standart: standrt, araliklar: aralklr };
 	$: uretilenParola = parolaUret(secenekler);
-	$: sepettekiParolalar = [''];
+	$: sepettekiParolalar = [];
 	$: parolaOznesi = sepettekiParolalar[sepettekiParolalar.length - 1].split(
 		standrt ? '-' : aralklr
 	)[1];

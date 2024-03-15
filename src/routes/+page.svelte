@@ -278,10 +278,10 @@
 	#basket > ul {
 		@apply cursor-pointer font-bold text-secondary-foreground;
 	}
-	#basket > ul > li:first-child {
+	#basket > ul li:first-child {
 		@apply rounded-t-lg;
 	}
-	#basket > ul > li {
+	#basket > ul li {
 		@apply block w-full  border-b border-gray-200 px-4 py-2;
 		@apply hover:bg-gray-100 hover:text-accent;
 		@apply focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent;

@@ -51,6 +51,7 @@
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
 		}, 2000);
+		console.log('ℹ  ~ sepeteKopyala ~ sepettekiParolalar:', sepettekiParolalar);
 	}
 
 	async function fotoAlaniGoster() {

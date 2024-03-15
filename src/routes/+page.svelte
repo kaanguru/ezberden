@@ -51,7 +51,7 @@
 		kopyalaAlertAlaniAcik = true;
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
-		}, 2000);
+		}, 9000);
 	}
 	function aciksaKapat(alert: boolean) {
 		if (alert) {

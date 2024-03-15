@@ -49,9 +49,11 @@
 		sepettekiParolalar[sepettekiParolalar.length - 1] !== uretilenParola
 			? sepettekiParolalar.push(uretilenParola)
 			: false;
+		// Dizi referansını güncelle
+		sepettekiParolalar = [...sepettekiParolalar];
 		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		kopyalaAlertAlaniAcik = true;
-		console.log('ℹ  ~ sepeteKopyala ~ sepettekiParolalar:', sepettekiParolalar);
+		console.log('ℹ ~ sepeteKopyala ~ sepettekiParolalar:', sepettekiParolalar);
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
 		}, 2000);

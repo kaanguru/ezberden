@@ -122,7 +122,10 @@
 
 {#if sepettekiParolalar.length > 0}
 	<ShoppingBasket class="absolute right-0 top-0 z-10" />
-	<div id="basket" class=" absolute right-0 top-4 w-1/3 text-right">
+	<div
+		id="basket"
+		class="absolute right-0 top-4 w-1/3 rounded-lg border border-gray-200 text-right text-sm"
+	>
 		<ul class="bg-secondary/75 p-1 text-right font-bold text-secondary-foreground">
 			{#each sepettekiParolalar as parola}
 				<li>{parola}</li>

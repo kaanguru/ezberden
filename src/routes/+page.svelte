@@ -46,14 +46,17 @@
 			kopyalaAlertAlaniAcik = false;
 			return;
 		}
-		sepettekiParolalar[sepettekiParolalar.length - 1] !== uretilenParola
-			? sepettekiParolalar.push(uretilenParola)
-			: false;
-		// Dizi referansını güncelle
-		sepettekiParolalar = [...sepettekiParolalar];
-		clipboardaKopyala(sepettekiParolalar[sepettekiParolalar.length - 1]);
+		// Check if the last item in the array is not the same as the generated password
+		if (sepettekiParolalar[sepettekiParolalar.length - 1] !== uretilenParola) {
+			// Update the array with the new password
+			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
+		}
+		// Copy the last password to the clipboard
+		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
+		// Show the alert
 		kopyalaAlertAlaniAcik = true;
 		console.log('ℹ ~ sepeteKopyala ~ sepettekiParolalar:', sepettekiParolalar);
+		// Hide the alert after 2 seconds
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
 		}, 2000);
@@ -96,25 +99,7 @@
 			(match) => translations[match as keyof typeof translations]
 		);
 	}
-	async function getSmallPhotoURL(parolaOznesi: string) {
-		const formData = new FormData();
-		formData.append('parolaOznesi', parolaOznesi);
-		const response = await fetch('/', {
-			method: 'POST',
-			body: formData
-		});
-		const text = await response.text();
-		if (!text) {
-			// Handle empty response gracefully (e.g., return null)
-			return null;
-		}
-		console.log(text); // Log the raw response text
-		const data = JSON.parse(text); // Manually parse the JSON
 
-		// const data = await response.json();
-
-		return data.smallPhotoURL;
-	}
 	async function clipboardaKopyala(parol: string) {
 		await navigator.clipboard.writeText(parol);
 	}

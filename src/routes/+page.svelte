@@ -47,9 +47,9 @@
 		if (sepettekiSon !== uretilenParola) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
-		if (clipboardakiIleAyni(sepettekiSon)) {
+		/* if (clipboardakiIleAyni(sepettekiSon)) {
 			return;
-		}
+		} */
 		clipboardaKopyala(sepettekiSon);
 		toast.success('panoya kopyalandı', {
 			description: `Ezberlenecek parolanız: 

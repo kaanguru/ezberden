@@ -69,7 +69,7 @@
 			direncAlertAlaniAcik = false;
 			return;
 		}
-		const kalite = zxcvbn(sepettekiParolalar[sepettekiParolalar.length]);
+		const kalite = zxcvbn(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		crackTimes = Object.values(kalite.crack_times_display);
 		direncAlertAlaniAcik = true;
 		setTimeout(() => {

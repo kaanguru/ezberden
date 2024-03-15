@@ -297,8 +297,8 @@
 	}
 	#basket > ul li:last-child {
 		@apply block w-full border-b border-gray-200 bg-primary px-4 py-2 text-primary-foreground;
-		@apply hover:text-accent-700 rounded-b-lg hover:bg-gray-100;
-		@apply focus:text-accent-700 focus:ring-accent-700 focus:outline-none focus:ring-2;
+		@apply rounded-b-lg hover:bg-gray-100 hover:text-accent;
+		@apply focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent;
 	}
 
 	.satir {

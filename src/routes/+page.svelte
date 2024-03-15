@@ -29,9 +29,10 @@
 	$: secenekler = { kelimeSayisi: kelmSays, standart: standrt, araliklar: aralklr };
 	$: uretilenParola = parolaUret(secenekler);
 	$: sepettekiParolalar = [];
-	$: parolaOznesi = sepettekiParolalar[sepettekiParolalar.length - 1].split(
-		standrt ? '-' : aralklr
-	)[1];
+	$: parolaOznesi =
+		sepettekiParolalar.length > 0
+			? sepettekiParolalar[sepettekiParolalar.length - 1].split(standrt ? '-' : aralklr)[1]
+			: '';
 
 	function yenidenUret() {
 		kopyalaAlertAlaniAcik = false;

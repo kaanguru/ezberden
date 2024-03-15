@@ -288,7 +288,7 @@
 	}
 	#basket > ul > li:first-child {
 		@apply block w-full border-b border-gray-200 px-4 py-2;
-		@apply rounded-t-lg bg-primary text-primary-foreground;
+		@apply rounded-t-lg  text-primary-foreground;
 	}
 	#basket > ul > li {
 		@apply block w-full  border-b border-gray-200 px-4 py-2;
@@ -296,9 +296,9 @@
 		@apply focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700;
 	}
 	#basket > ul li:last-child {
-		@apply block w-full border-b border-gray-200 px-4 py-2;
+		@apply block w-full border-b border-gray-200 bg-primary px-4 py-2;
 		@apply rounded-b-lg hover:bg-gray-100 hover:text-blue-700;
-		@apply cursor-pointer focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700;
+		@apply focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700;
 	}
 
 	.satir {

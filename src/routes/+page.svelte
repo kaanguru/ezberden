@@ -50,7 +50,7 @@
 		// Show the alert
 		toast.success('panoya kopyalandı', {
 			description: `Ezberlenecek parolanız: <span class="font-bold">
-				{sepettekiParolalar[sepettekiParolalar.length - 1]}
+				${sepettekiParolalar[sepettekiParolalar.length - 1]}
 				</span>`
 		});
 	}

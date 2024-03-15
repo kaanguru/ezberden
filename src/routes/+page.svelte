@@ -94,6 +94,10 @@
 	async function clipboardaKopyala(parol: string) {
 		await navigator.clipboard.writeText(parol);
 	}
+	function sepeteTiklama(p: string) {
+		clipboardaKopyala(p);
+		active = true;
+	}
 </script>
 
 {#if sepettekiParolalar.length > 0}

@@ -115,6 +115,9 @@
 
 		return data.smallPhotoURL;
 	}
+	async function clipboardaKopyala(parol: string) {
+		await navigator.clipboard.writeText(parol);
+	}
 </script>
 
 {#if sepettekiParolalar.length > 0}

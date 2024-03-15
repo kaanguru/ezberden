@@ -113,7 +113,9 @@
 		<ShoppingBasket class="end-45 absolute top-1 z-10 text-accent" />
 		<ul>
 			{#each sepettekiParolalar as parola}
-				<li class={isActive ? 'active' : ''} on:click={sepeteTiklama(parola)}>{parola}</li>
+				<li class={clipboardakiIleAyni(parola) ? 'active' : ''} on:click={sepeteTiklama(parola)}>
+					{parola}
+				</li>
 			{/each}
 		</ul>
 	</div>

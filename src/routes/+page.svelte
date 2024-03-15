@@ -283,7 +283,7 @@
 		@apply rounded-b-lg hover:bg-gray-100 hover:text-accent;
 	}
 	li .active {
-		@apply bg-primary text-primary-foreground;
+		@apply bg-red;
 	}
 	.satir {
 		@apply mx-auto flex items-center justify-center pt-4;

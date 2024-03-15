@@ -258,7 +258,9 @@
 				<ClipboardCheck class="h-4 w-4" />
 				<Alert.Title><ThumbsUp /></Alert.Title>
 				<Alert.Description
-					>Ezberlenecek parolanız: <span class="font-bold">{sepettekiParola}</span> panoya kopyalandı</Alert.Description
+					>Ezberlenecek parolanız: <span class="font-bold"
+						>{sepettekiParola[sepettekiParola.length - 1]}</span
+					> panoya kopyalandı</Alert.Description
 				>
 			</Alert.Root>
 		</div>

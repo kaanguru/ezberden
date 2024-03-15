@@ -46,7 +46,9 @@
 			kopyalaAlertAlaniAcik = false;
 			return;
 		}
-		sepettekiParolalar.push(uretilenParola);
+		sepettekiParolalar[sepettekiParolalar.length - 1] !== uretilenParola
+			? sepettekiParolalar.push(uretilenParola)
+			: false;
 		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		kopyalaAlertAlaniAcik = true;
 		console.log('ℹ  ~ sepeteKopyala ~ sepettekiParolalar:', sepettekiParolalar);

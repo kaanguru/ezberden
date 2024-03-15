@@ -18,5 +18,5 @@
 	/>
 	<span class="sr-only">Toggle theme</span>
 </Button>
-<Toaster />
+<Toaster position="top-center" />
 <slot />

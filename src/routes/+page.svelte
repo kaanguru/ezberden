@@ -130,7 +130,7 @@
 	<div class="satir">
 		<input
 			id="kelimeSayisi"
-			class="mr-1 max-w-9 bg-secondary px-1 dark:bg-primary"
+			class="mr-1 max-w-9 rounded-lg bg-secondary px-1 py-2 dark:bg-primary"
 			type="number"
 			max={6}
 			min={2}

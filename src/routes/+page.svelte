@@ -286,6 +286,10 @@
 	#basket > ul {
 		@apply bg-secondary/75 p-2  font-bold text-secondary-foreground;
 	}
+	#basket > ul > li {
+		@apply my-1;
+	}
+
 	.satir {
 		@apply mx-auto flex items-center justify-center pt-4;
 	}

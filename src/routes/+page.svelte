@@ -113,6 +113,8 @@
 		<ShoppingBasket class="end-45 absolute top-1 z-10 text-accent" />
 		<ul>
 			{#each sepettekiParolalar as parola}
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 				<li on:click={sepeteTiklama(parola)}>
 					{parola}
 				</li>

@@ -54,7 +54,7 @@
 		kopyalaAlertAlaniAcik = true;
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
-		}, 2000);
+		}, 9000);
 	}
 
 	async function fotoAlaniGoster() {

@@ -205,19 +205,17 @@
 		<div class="satir max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
 			<p class="mx-auto leading-7 [&:not(:first-child)]:mt-6">
 				Şifreyi hatırlamak için <span class="font-bold">
-					{sepettekiParola.split(standrt ? '-' : aralklr)[1]}
+					{parolaOznesi}
 				</span> kelimesini çağrıştıracak bir fotoğraf bulabilirsiniz.
 			</p>
 			<a
 				class="text-center"
-				href="https://duckduckgo.com/?q={sepettekiParola.split(
-					standrt ? '-' : aralklr
-				)[1]}&t=newext&atb=v410-1&iax=images&ia=images"
+				href="https://duckduckgo.com/?q={parolaOznesi}&t=newext&atb=v410-1&iax=images&ia=images"
 				target="_blank"
 				rel="noopener noreferrer"
 				><Button variant="secondary">
 					<ScanSearch class="mr-2 h-4 w-4" />
-					Ara
+					{parolaOznesi} Ara
 				</Button>
 			</a>
 		</div>

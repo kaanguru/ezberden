@@ -42,10 +42,10 @@
 		uretilenParola = parolaUret(secenekler);
 	}
 	async function sepeteKopyala() {
-		if (kopyalaAlertAlaniAcik) {
+		/* 		if (kopyalaAlertAlaniAcik) {
 			kopyalaAlertAlaniAcik = false;
 			return;
-		}
+		} */
 		if (sepettekiParolalar[sepettekiParolalar.length - 1] !== uretilenParola) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}

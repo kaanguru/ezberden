@@ -121,7 +121,7 @@
 </script>
 
 {#if sepettekiParolalar.length > 0}
-	<ShoppingBasket class="end-35 absolute top-0 z-10 text-secondary-foreground" />
+	<ShoppingBasket class="absolute end-9 top-0 z-10 text-secondary-foreground" />
 	<div id="basket">
 		<ul>
 			{#each sepettekiParolalar as parola}

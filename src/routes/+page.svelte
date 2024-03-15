@@ -48,11 +48,10 @@
 		}
 		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		// Show the alert
-		toast('Hello world');
-		/* 		kopyalaAlertAlaniAcik = true;
-		setTimeout(() => {
-			kopyalaAlertAlaniAcik = false;
-		}, 9000); */
+		toast.success('panoya kopyalandı', {
+			description: `Ezberlenecek parolanız: <span class="font-bold"	>{sepettekiParolalar[sepettekiParolalar.length - 1]}</span
+					>`
+		});
 	}
 
 	async function fotoAlaniGoster() {

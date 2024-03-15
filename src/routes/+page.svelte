@@ -43,10 +43,14 @@
 		uretilenParola = parolaUret(secenekler);
 	}
 	async function sepeteKopyala() {
-		if (sepettekiParolalar[sepettekiParolalar.length - 1] !== uretilenParola) {
+		const sepettekiSon = sepettekiParolalar[sepettekiParolalar.length - 1];
+		if (sepettekiSon !== uretilenParola) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
-		clipboardaKopyala(sepettekiParolalar[sepettekiParolalar.length - 1]);
+		if (clipboardakiIleAyni(sepettekiSon)) {
+			return;
+		}
+		clipboardaKopyala(sepettekiSon);
 		toast.success('panoya kopyalandı', {
 			description: `Ezberlenecek parolanız: 
 				${sepettekiParolalar[sepettekiParolalar.length - 1]}`

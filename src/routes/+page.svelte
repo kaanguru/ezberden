@@ -123,7 +123,7 @@
 {#if sepettekiParolalar.length > 0}
 	<ShoppingBasket class="absolute right-0 top-0 z-10" />
 	<div id="basket">
-		<ul class="bg-secondary/75 p-1 text-right font-bold text-secondary-foreground">
+		<ul>
 			{#each sepettekiParolalar as parola}
 				<li>{parola}</li>
 			{/each}
@@ -282,6 +282,9 @@
 	#basket {
 		@apply absolute right-0 top-4 w-1/3 rounded-lg border;
 		@apply border-gray-200 text-right text-sm;
+	}
+	#basket > ul {
+		@apply bg-secondary/75 p-1 text-right font-bold text-secondary-foreground;
 	}
 	.satir {
 		@apply mx-auto flex items-center justify-center pt-4;

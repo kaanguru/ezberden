@@ -97,6 +97,10 @@
 	function sepeteTiklama(p: string) {
 		clipboardaKopyala(p);
 		active = true;
+		toast.success('panoya kopyalandı', {
+			description: `Ezberlenecek parolanız: 
+				${p}`
+		});
 	}
 </script>
 

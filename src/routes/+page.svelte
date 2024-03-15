@@ -122,7 +122,7 @@
 
 {#if sepettekiParolalar.length > 0}
 	<div id="basket">
-		<ShoppingBasket class="end-45 absolute top-1 z-10 text-secondary hover:text-primary" />
+		<ShoppingBasket class="end-45 absolute top-1 z-10 text-secondary hover:text-black" />
 		<ul>
 			{#each sepettekiParolalar as parola}
 				<li>{parola}</li>

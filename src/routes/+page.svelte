@@ -26,7 +26,6 @@
 	let direncAlertAlaniAcik = false;
 	let fotoAlertAlaniAcik = false;
 	let crackTimes: string[] = [];
-	let smallPhotoURL: string | null | undefined = '';
 
 	$: secenekler = { kelimeSayisi: kelmSays, standart: standrt, araliklar: aralklr };
 	$: uretilenParola = parolaUret(secenekler);
@@ -53,8 +52,6 @@
 	}
 
 	async function fotoAlaniGoster() {
-		smallPhotoURL = await getPhotoURL(parolaOznesi, 'tiny');
-		// smallPhotoURL = await getSmallPhotoURL(parolaOznesi);
 		fotoAlertAlaniAcik = true;
 		setTimeout(() => {
 			fotoAlertAlaniAcik = false;

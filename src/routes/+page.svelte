@@ -101,7 +101,7 @@
 		<ShoppingBasket class="end-45 absolute top-1 z-10 text-accent" />
 		<ul>
 			{#each sepettekiParolalar as parola}
-				<li on:click={clipboardaKopyala(parola)}>{parola}</li>
+				<li class:active on:click={clipboardaKopyala(parola)}>{parola}</li>
 			{/each}
 		</ul>
 	</div>
@@ -274,7 +274,9 @@
 		@apply block w-full border-b border-gray-200 bg-primary px-4 py-2 text-primary-foreground;
 		@apply rounded-b-lg hover:bg-gray-100 hover:text-accent;
 	}
-
+	li .active {
+		@apply bg-primary text-primary-foreground;
+	}
 	.satir {
 		@apply mx-auto flex items-center justify-center pt-4;
 	}

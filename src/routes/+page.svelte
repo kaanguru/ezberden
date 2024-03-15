@@ -293,7 +293,7 @@
 	#basket > ul > li {
 		@apply block w-full  border-b border-gray-200 px-4 py-2;
 		@apply hover:bg-gray-100 hover:text-accent-foreground;
-		@apply focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700;
+		@apply focus:text-accent focus:outline-none focus:ring-2 focus:ring-blue-700;
 	}
 	#basket > ul li:last-child {
 		@apply block w-full border-b border-gray-200 bg-primary px-4 py-2 text-primary-foreground;

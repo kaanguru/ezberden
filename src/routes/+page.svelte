@@ -47,7 +47,7 @@
 		if (sepettekiSon !== uretilenParola) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
-		if (await clipboardakiIleAyni(sepettekiSon)) {
+		if (await clipboardakiIleAyni(uretilenParola)) {
 			return;
 		}
 		clipboardaKopyala(sepettekiSon);

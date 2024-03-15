@@ -290,6 +290,10 @@
 		@apply block w-full border-b border-gray-200 px-4 py-2;
 		@apply cursor-pointer rounded-t-lg bg-blue-700 text-white;
 	}
+	#basket > ul > li {
+		@apply block w-full border-b border-gray-200 px-4 py-2;
+		@apply cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700;
+	}
 
 	.satir {
 		@apply mx-auto flex items-center justify-center pt-4;

@@ -94,6 +94,10 @@
 	async function clipboardaKopyala(parol: string) {
 		await navigator.clipboard.writeText(parol);
 	}
+	async function clipboardakiIleAyni(parol: string): boolean {
+		const clipboardkiParola = await navigator.clipboard.readText();
+		return clipboardkiParola === parol;
+	}
 	function sepeteTiklama(p: string) {
 		clipboardaKopyala(p);
 		active = true;
@@ -109,7 +113,7 @@
 		<ShoppingBasket class="end-45 absolute top-1 z-10 text-accent" />
 		<ul>
 			{#each sepettekiParolalar as parola}
-				<li class:active on:click={sepeteTiklama(parola)}>{parola}</li>
+				<li class={isActive ? 'active' : ''} on:click={sepeteTiklama(parola)}>{parola}</li>
 			{/each}
 		</ul>
 	</div>

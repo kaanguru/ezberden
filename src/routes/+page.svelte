@@ -15,29 +15,30 @@
 	} from 'lucide-svelte';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import * as Table from '$lib/components/ui/table';
-	import { getPhotoURL } from '$lib/pexels';
 	import { parolaUret } from 'ezberlenen-parola';
 	import zxcvbn from 'zxcvbn';
 
 	let kelmSays = 3;
 	let standrt = false;
 	let aralklr = ' ';
-	let sepettekiParola = '';
 	let kopyalaAlertAlaniAcik = false;
 	let direncAlertAlaniAcik = false;
 	let fotoAlertAlaniAcik = false;
 	let crackTimes: string[] = [];
-	let smallPhotoURL: string | null | undefined = '';
 
 	$: secenekler = { kelimeSayisi: kelmSays, standart: standrt, araliklar: aralklr };
 	$: uretilenParola = parolaUret(secenekler);
-	$: parolaOznesi = sepettekiParola.split(standrt ? '-' : aralklr)[1];
+	$: sepettekiParolalar = [];
+	$: parolaOznesi =
+		sepettekiParolalar.length > 0
+			? sepettekiParolalar[sepettekiParolalar.length - 1].split(standrt ? '-' : aralklr)[1]
+			: '';
 
 	function yenidenUret() {
 		kopyalaAlertAlaniAcik = false;
 		direncAlertAlaniAcik = false;
 		fotoAlertAlaniAcik = false;
-		sepettekiParola = '';
+		// sepettekiParola = '';
 		uretilenParola = parolaUret(secenekler);
 	}
 	async function sepeteKopyala() {
@@ -45,17 +46,20 @@
 			kopyalaAlertAlaniAcik = false;
 			return;
 		}
-		sepettekiParola = uretilenParola;
-		await navigator.clipboard.writeText(sepettekiParola);
+		sepettekiParolalar[sepettekiParolalar.length - 1] !== uretilenParola
+			? sepettekiParolalar.push(uretilenParola)
+			: false;
+		// Dizi referansını güncelle
+		sepettekiParolalar = [...sepettekiParolalar];
+		clipboardaKopyala(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		kopyalaAlertAlaniAcik = true;
+		console.log('ℹ ~ sepeteKopyala ~ sepettekiParolalar:', sepettekiParolalar);
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
 		}, 2000);
 	}
 
 	async function fotoAlaniGoster() {
-		smallPhotoURL = await getPhotoURL(parolaOznesi, 'tiny');
-		// smallPhotoURL = await getSmallPhotoURL(parolaOznesi);
 		fotoAlertAlaniAcik = true;
 		setTimeout(() => {
 			fotoAlertAlaniAcik = false;
@@ -67,7 +71,7 @@
 			direncAlertAlaniAcik = false;
 			return;
 		}
-		const kalite = zxcvbn(sepettekiParola);
+		const kalite = zxcvbn(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		crackTimes = Object.values(kalite.crack_times_display);
 		direncAlertAlaniAcik = true;
 		setTimeout(() => {
@@ -111,14 +115,19 @@
 
 		return data.smallPhotoURL;
 	}
+	async function clipboardaKopyala(parol: string) {
+		await navigator.clipboard.writeText(parol);
+	}
 </script>
 
-{#if sepettekiParola}
+{#if sepettekiParolalar.length > 0}
 	<ShoppingBasket class="absolute right-0 top-0 z-10" />
-	<div id="basket" class="absolute right-0 top-4 h-auto w-1/3 text-right">
-		<p class="bg-secondary/75 p-1 text-right font-bold text-secondary-foreground">
-			{sepettekiParola}
-		</p>
+	<div id="basket" class=" absolute right-0 top-4 w-1/3 text-right">
+		<ul class="bg-secondary/75 p-1 text-right font-bold text-secondary-foreground">
+			{#each sepettekiParolalar as parola}
+				<li>{parola}</li>
+			{/each}
+		</ul>
 	</div>
 {/if}
 <div class="container mx-auto justify-center">
@@ -178,7 +187,7 @@
 			</Tooltip.Content>
 		</Tooltip.Root>
 	</div>
-	{#if sepettekiParola}
+	{#if sepettekiParolalar.length > 0}
 		<div class="satir b mb-4">
 			<!-- foto -->
 			<Tooltip.Root>
@@ -205,39 +214,21 @@
 		</div>
 	{/if}
 
-	{#if fotoAlertAlaniAcik && smallPhotoURL}
-		<div class="satir max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
-			<small
-				><span class="m-3 font-bold">{sepettekiParola.split(standrt ? '-' : aralklr)[1]}</span> kelimesini
-				hatırlamanıza yardımcı olacağını düşündüğümüz bir fotoğraf</small
-			>
-			<img
-				class="m-2"
-				src={smallPhotoURL}
-				alt={sepettekiParola.split(standrt ? '-' : aralklr)[1]}
-			/>
-			<hr />
-		</div>
-		<blockquote class="mt-16 border-l-2 pl-6 text-sm italic">
-			<a href="https://www.pexels.com">Photos provided by Pexels</a>
-		</blockquote>
-	{:else if fotoAlertAlaniAcik}
+	{#if fotoAlertAlaniAcik}
 		<div class="satir max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
 			<p class="mx-auto leading-7 [&:not(:first-child)]:mt-6">
 				Şifreyi hatırlamak için <span class="font-bold">
-					{sepettekiParola.split(standrt ? '-' : aralklr)[1]}
-				</span> kelimesini arattık ama uygun fotoğraf bulamadık.
+					{parolaOznesi}
+				</span> kelimesini çağrıştıracak bir fotoğraf bulabilirsiniz.
 			</p>
 			<a
 				class="text-center"
-				href="https://duckduckgo.com/?q={sepettekiParola.split(
-					standrt ? '-' : aralklr
-				)[1]}&t=newext&atb=v410-1&iax=images&ia=images"
+				href="https://duckduckgo.com/?q={parolaOznesi}&t=newext&atb=v410-1&iax=images&ia=images"
 				target="_blank"
 				rel="noopener noreferrer"
 				><Button variant="secondary">
 					<ScanSearch class="mr-2 h-4 w-4" />
-					İnternette Arat!
+					{parolaOznesi} Ara
 				</Button>
 			</a>
 		</div>
@@ -246,7 +237,7 @@
 	{#if direncAlertAlaniAcik}
 		<div class="mx-auto max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
 			<h4 class="mx-auto scroll-m-20 text-xl font-semibold tracking-tight">
-				{sepettekiParola}
+				{sepettekiParolalar[sepettekiParolalar.length - 1]}
 			</h4>
 			<p class="text-sm text-muted-foreground">saldırıya ne kadar dayanabilecek?</p>
 			<Table.Root>
@@ -278,7 +269,9 @@
 				<ClipboardCheck class="h-4 w-4" />
 				<Alert.Title><ThumbsUp /></Alert.Title>
 				<Alert.Description
-					>Ezberlenecek parolanız: <span class="font-bold">{sepettekiParola}</span> panoya kopyalandı</Alert.Description
+					>Ezberlenecek parolanız: <span class="font-bold"
+						>{sepettekiParolalar[sepettekiParolalar.length - 1]}</span
+					> panoya kopyalandı</Alert.Description
 				>
 			</Alert.Root>
 		</div>

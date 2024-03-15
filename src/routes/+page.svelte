@@ -280,7 +280,7 @@
 
 <style>
 	#basket {
-		@apply absolute right-0 top-0 w-1/3 rounded-lg border pr-5;
+		@apply absolute right-0 top-0 w-1/3 rounded-lg border pr-6;
 		@apply border-gray-200 text-right text-sm;
 	}
 	#basket > ul {

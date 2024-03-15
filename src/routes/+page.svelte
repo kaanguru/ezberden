@@ -46,17 +46,12 @@
 			kopyalaAlertAlaniAcik = false;
 			return;
 		}
-		// Check if the last item in the array is not the same as the generated password
 		if (sepettekiParolalar[sepettekiParolalar.length - 1] !== uretilenParola) {
-			// Update the array with the new password
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
-		// Copy the last password to the clipboard
 		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		// Show the alert
 		kopyalaAlertAlaniAcik = true;
-		console.log('ℹ ~ sepeteKopyala ~ sepettekiParolalar:', sepettekiParolalar);
-		// Hide the alert after 2 seconds
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
 		}, 2000);

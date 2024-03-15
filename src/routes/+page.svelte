@@ -293,12 +293,12 @@
 	#basket > ul > li {
 		@apply block w-full  border-b border-gray-200 px-4 py-2;
 		@apply hover:bg-gray-100 hover:text-accent-foreground;
-		@apply focus:text-accent focus:outline-none focus:ring-2 focus:ring-blue-700;
+		@apply focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent;
 	}
 	#basket > ul li:last-child {
 		@apply block w-full border-b border-gray-200 bg-primary px-4 py-2 text-primary-foreground;
-		@apply rounded-b-lg hover:bg-gray-100 hover:text-blue-700;
-		@apply focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700;
+		@apply hover:text-accent-700 rounded-b-lg hover:bg-gray-100;
+		@apply focus:text-accent-700 focus:ring-accent-700 focus:outline-none focus:ring-2;
 	}
 
 	.satir {

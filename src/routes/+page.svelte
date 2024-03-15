@@ -113,11 +113,9 @@
 		<ShoppingBasket class="end-45 absolute top-1 z-10 text-accent" />
 		<ul>
 			{#each sepettekiParolalar as parola}
-				<button on:click={() => sepeteTiklama(parola)}
-					><li>
-						{parola}
-					</li></button
-				>
+				<li on:click={sepeteTiklama(parola)}>
+					<button>{parola}</button>
+				</li>
 			{/each}
 		</ul>
 	</div>
@@ -278,10 +276,10 @@
 	#basket > ul {
 		@apply cursor-pointer font-bold text-secondary-foreground;
 	}
-	#basket > ul li:first-child {
+	#basket > ul > li:first-child {
 		@apply rounded-t-lg;
 	}
-	#basket > ul li {
+	#basket > ul > li {
 		@apply block w-full  border-b border-gray-200 px-4 py-2;
 		@apply hover:bg-gray-100 hover:text-accent;
 		@apply focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent;

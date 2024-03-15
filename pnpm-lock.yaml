@@ -23,6 +23,9 @@ dependencies:
   pexels:
     specifier: ^1.4.0
     version: 1.4.0
+  svelte-sonner:
+    specifier: ^0.3.19
+    version: 0.3.19(svelte@4.2.12)
   tailwind-merge:
     specifier: ^2.2.1
     version: 2.2.1
@@ -2714,6 +2717,14 @@ packages:
       svelte: 4.2.12
       typescript: 5.4.2
     dev: true
+
+  /svelte-sonner@0.3.19(svelte@4.2.12):
+    resolution: {integrity: sha512-jpPOgLtHwRaB6Vqo2dUQMv15/yUV/BQWTjKpEqQ11uqRSHKjAYUKZyGrHB2cQsGmyjR0JUzBD58btpgNqINQ/Q==}
+    peerDependencies:
+      svelte: '>=3 <5'
+    dependencies:
+      svelte: 4.2.12
+    dev: false
 
   /svelte@4.2.12:
     resolution: {integrity: sha512-d8+wsh5TfPwqVzbm4/HCXC783/KPHV60NvwitJnyTA5lWn1elhXMNWhXGCJ7PwPa8qFUnyJNIyuIRt2mT0WMug==}

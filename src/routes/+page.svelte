@@ -292,7 +292,7 @@
 	}
 	#basket > ul > li {
 		@apply block w-full border-b border-gray-200 px-4 py-2;
-		@apply cursor-pointer hover:bg-gray-100 hover:text-accent;
+		@apply cursor-pointer hover:bg-gray-100 hover:text-accent-foreground;
 		@apply focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700;
 	}
 

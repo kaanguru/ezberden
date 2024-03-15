@@ -96,7 +96,7 @@
 	}
 
 	async function clipboardaKopyala(parol: string) {
-		await navigator.clipboard.writeText(parol);
+		return await navigator.clipboard.writeText(parol);
 	}
 	async function clipboardakiIleAyni(parol: string): Promise<boolean> {
 		const clipboardkiParola = await navigator.clipboard.readText();

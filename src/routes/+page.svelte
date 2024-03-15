@@ -217,7 +217,7 @@
 				rel="noopener noreferrer"
 				><Button variant="secondary">
 					<ScanSearch class="mr-2 h-4 w-4" />
-					İnternette Ara
+					Ara
 				</Button>
 			</a>
 		</div>

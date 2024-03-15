@@ -29,7 +29,7 @@
 
 	$: secenekler = { kelimeSayisi: kelmSays, standart: standrt, araliklar: aralklr };
 	$: uretilenParola = parolaUret(secenekler);
-	$: parolaOznesi = sepettekiParola[sepettekiParola].split(standrt ? '-' : aralklr)[1];
+	$: parolaOznesi = sepettekiParola[sepettekiParola.length - 1].split(standrt ? '-' : aralklr)[1];
 
 	function yenidenUret() {
 		kopyalaAlertAlaniAcik = false;
@@ -44,7 +44,7 @@
 			return;
 		}
 		sepettekiParola.push(uretilenParola);
-		await navigator.clipboard.writeText(sepettekiParola[sepettekiParola.length]);
+		await navigator.clipboard.writeText(sepettekiParola[sepettekiParola.length - 1]);
 		kopyalaAlertAlaniAcik = true;
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;

@@ -182,7 +182,7 @@
 			</Tooltip.Content>
 		</Tooltip.Root>
 	</div>
-	{#if sepettekiParolalar}
+	{#if sepettekiParolalar.length > 0}
 		<div class="satir b mb-4">
 			<!-- foto -->
 			<Tooltip.Root>

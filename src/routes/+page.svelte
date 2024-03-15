@@ -101,7 +101,7 @@
 		<ShoppingBasket class="end-45 absolute top-1 z-10 text-accent" />
 		<ul>
 			{#each sepettekiParolalar as parola}
-				<li>{parola}</li>
+				<li on:click={() => clipboardaKopyala(parola)}>{parola}</li>
 			{/each}
 		</ul>
 	</div>

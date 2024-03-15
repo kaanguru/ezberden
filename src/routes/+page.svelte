@@ -21,7 +21,6 @@
 	let kelmSays = 3;
 	let standrt = false;
 	let aralklr = ' ';
-	let sepettekiParola = ['test', 'test2'];
 	let kopyalaAlertAlaniAcik = false;
 	let direncAlertAlaniAcik = false;
 	let fotoAlertAlaniAcik = false;
@@ -29,6 +28,7 @@
 
 	$: secenekler = { kelimeSayisi: kelmSays, standart: standrt, araliklar: aralklr };
 	$: uretilenParola = parolaUret(secenekler);
+	$: sepettekiParola = [''];
 	$: parolaOznesi = sepettekiParola[sepettekiParola.length - 1].split(standrt ? '-' : aralklr)[1];
 
 	function yenidenUret() {

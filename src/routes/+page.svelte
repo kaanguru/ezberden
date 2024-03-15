@@ -42,7 +42,10 @@
 		uretilenParola = parolaUret(secenekler);
 	}
 	async function sepeteKopyala() {
-		aciksaKapat(kopyalaAlertAlaniAcik);
+		if (kopyalaAlertAlaniAcik) {
+			kopyalaAlertAlaniAcik = false;
+			return;
+		}
 		if (sepettekiParolalar[sepettekiParolalar.length - 1] !== uretilenParola) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
@@ -51,13 +54,7 @@
 		kopyalaAlertAlaniAcik = true;
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
-		}, 9000);
-	}
-	function aciksaKapat(alert: boolean) {
-		if (alert) {
-			alert = false;
-			return;
-		}
+		}, 2000);
 	}
 
 	async function fotoAlaniGoster() {

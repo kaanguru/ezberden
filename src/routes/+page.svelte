@@ -51,7 +51,7 @@
 			: false;
 		// Dizi referansını güncelle
 		sepettekiParolalar = [...sepettekiParolalar];
-		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
+		clipboardaKopyala(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		kopyalaAlertAlaniAcik = true;
 		console.log('ℹ ~ sepeteKopyala ~ sepettekiParolalar:', sepettekiParolalar);
 		setTimeout(() => {

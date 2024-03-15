@@ -49,10 +49,10 @@
 		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		// Show the alert
 		() => toast('Hello world');
-		kopyalaAlertAlaniAcik = true;
+		/* 		kopyalaAlertAlaniAcik = true;
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
-		}, 9000);
+		}, 9000); */
 	}
 
 	async function fotoAlaniGoster() {

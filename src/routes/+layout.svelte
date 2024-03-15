@@ -4,6 +4,7 @@
 	import { Button } from '$lib/components/ui/button/';
 	import Sun from 'lucide-svelte/icons/sun';
 	import Moon from 'lucide-svelte/icons/moon';
+	import { Toaster } from '$lib/components/ui/sonner';
 </script>
 
 <ModeWatcher />

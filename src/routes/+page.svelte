@@ -48,10 +48,10 @@
 		sepettekiParolalar.push(uretilenParola);
 		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		kopyalaAlertAlaniAcik = true;
+		console.log('ℹ  ~ sepeteKopyala ~ sepettekiParolalar:', sepettekiParolalar);
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
 		}, 2000);
-		console.log('ℹ  ~ sepeteKopyala ~ sepettekiParolalar:', sepettekiParolalar);
 	}
 
 	async function fotoAlaniGoster() {

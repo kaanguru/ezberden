@@ -28,8 +28,10 @@
 
 	$: secenekler = { kelimeSayisi: kelmSays, standart: standrt, araliklar: aralklr };
 	$: uretilenParola = parolaUret(secenekler);
-	$: sepettekiParola = [''];
-	$: parolaOznesi = sepettekiParola[sepettekiParola.length - 1].split(standrt ? '-' : aralklr)[1];
+	$: sepettekiParolalar = [''];
+	$: parolaOznesi = sepettekiParolalar[sepettekiParolalar.length - 1].split(
+		standrt ? '-' : aralklr
+	)[1];
 
 	function yenidenUret() {
 		kopyalaAlertAlaniAcik = false;
@@ -43,8 +45,8 @@
 			kopyalaAlertAlaniAcik = false;
 			return;
 		}
-		sepettekiParola.push(uretilenParola);
-		await navigator.clipboard.writeText(sepettekiParola[sepettekiParola.length - 1]);
+		sepettekiParolalar.push(uretilenParola);
+		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		kopyalaAlertAlaniAcik = true;
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;
@@ -63,7 +65,7 @@
 			direncAlertAlaniAcik = false;
 			return;
 		}
-		const kalite = zxcvbn(sepettekiParola[sepettekiParola.length]);
+		const kalite = zxcvbn(sepettekiParolalar[sepettekiParolalar.length]);
 		crackTimes = Object.values(kalite.crack_times_display);
 		direncAlertAlaniAcik = true;
 		setTimeout(() => {
@@ -109,11 +111,11 @@
 	}
 </script>
 
-{#if sepettekiParola.length > 1}
+{#if sepettekiParolalar.length > 1}
 	<ShoppingBasket class="absolute right-0 top-0 z-10" />
 	<div id="basket" class="h-30 absolute right-0 top-4 w-1/3 text-right">
 		<ul class="bg-secondary/75 p-1 text-right font-bold text-secondary-foreground">
-			{#each sepettekiParola as parola}
+			{#each sepettekiParolalar as parola}
 				<li>{parola}</li>
 			{/each}
 		</ul>
@@ -176,7 +178,7 @@
 			</Tooltip.Content>
 		</Tooltip.Root>
 	</div>
-	{#if sepettekiParola}
+	{#if sepettekiParolalar}
 		<div class="satir b mb-4">
 			<!-- foto -->
 			<Tooltip.Root>
@@ -226,7 +228,7 @@
 	{#if direncAlertAlaniAcik}
 		<div class="mx-auto max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
 			<h4 class="mx-auto scroll-m-20 text-xl font-semibold tracking-tight">
-				{sepettekiParola}
+				{sepettekiParolalar}
 			</h4>
 			<p class="text-sm text-muted-foreground">saldırıya ne kadar dayanabilecek?</p>
 			<Table.Root>
@@ -259,7 +261,7 @@
 				<Alert.Title><ThumbsUp /></Alert.Title>
 				<Alert.Description
 					>Ezberlenecek parolanız: <span class="font-bold"
-						>{sepettekiParola[sepettekiParola.length - 1]}</span
+						>{sepettekiParolalar[sepettekiParolalar.length - 1]}</span
 					> panoya kopyalandı</Alert.Description
 				>
 			</Alert.Root>

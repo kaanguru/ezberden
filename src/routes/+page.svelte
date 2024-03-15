@@ -48,7 +48,7 @@
 		}
 		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		// Show the alert
-		() => toast('Hello world');
+		toast('Hello world');
 		/* 		kopyalaAlertAlaniAcik = true;
 		setTimeout(() => {
 			kopyalaAlertAlaniAcik = false;

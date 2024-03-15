@@ -206,7 +206,7 @@
 			<p class="mx-auto leading-7 [&:not(:first-child)]:mt-6">
 				Şifreyi hatırlamak için <span class="font-bold">
 					{sepettekiParola.split(standrt ? '-' : aralklr)[1]}
-				</span> kelimesini arattık ama uygun fotoğraf bulamadık.
+				</span> kelimesini çağrıştıracak bir fotoğraf bulabilirsiniz.
 			</p>
 			<a
 				class="text-center"
@@ -217,7 +217,7 @@
 				rel="noopener noreferrer"
 				><Button variant="secondary">
 					<ScanSearch class="mr-2 h-4 w-4" />
-					İnternette Arat!
+					İnternette Ara
 				</Button>
 			</a>
 		</div>

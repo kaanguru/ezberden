@@ -288,7 +288,7 @@
 	}
 	#basket > ul > li:first-child {
 		@apply block w-full border-b border-gray-200 px-4 py-2;
-		@apply cursor-pointer rounded-t-lg bg-primary text-primary-foreground;
+		@apply cursor-pointer rounded-t-lg bg-primary/75 text-primary-foreground;
 	}
 	#basket > ul > li {
 		@apply block w-full border-b border-gray-200 px-4 py-2;

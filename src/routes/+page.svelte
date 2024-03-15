@@ -284,7 +284,7 @@
 		@apply border-gray-200 text-right text-sm;
 	}
 	#basket > ul {
-		@apply bg-secondary/75 p-1 text-right font-bold text-secondary-foreground;
+		@apply bg-secondary/75 p-1  font-bold text-secondary-foreground;
 	}
 	.satir {
 		@apply mx-auto flex items-center justify-center pt-4;

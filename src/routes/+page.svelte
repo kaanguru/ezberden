@@ -49,8 +49,9 @@
 		await navigator.clipboard.writeText(sepettekiParolalar[sepettekiParolalar.length - 1]);
 		// Show the alert
 		toast.success('panoya kopyalandı', {
-			description: `Ezberlenecek parolanız: <span class="font-bold"	>{sepettekiParolalar[sepettekiParolalar.length - 1]}</span
-					>`
+			description: `Ezberlenecek parolanız: <span class="font-bold">
+				{sepettekiParolalar[sepettekiParolalar.length - 1]}
+				</span>`
 		});
 	}
 

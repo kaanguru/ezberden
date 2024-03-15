@@ -122,7 +122,7 @@
 
 {#if sepettekiParolalar.length > 0}
 	<div id="basket">
-		<ShoppingBasket class="end-45 absolute top-1 z-10 text-secondary hover:text-black" />
+		<ShoppingBasket class="end-45 absolute top-1 z-10 text-secondary" />
 		<ul>
 			{#each sepettekiParolalar as parola}
 				<li>{parola}</li>
@@ -291,8 +291,8 @@
 		@apply cursor-pointer rounded-t-lg bg-primary text-primary-foreground;
 	}
 	#basket > ul > li {
-		@apply block w-full border-b border-gray-200 px-4 py-2;
-		@apply cursor-pointer hover:bg-gray-100 hover:text-accent-foreground;
+		@apply block w-full cursor-pointer border-b border-gray-200 px-4 py-2;
+		@apply hover:bg-gray-100 hover:text-accent-foreground;
 		@apply focus:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700;
 	}
 

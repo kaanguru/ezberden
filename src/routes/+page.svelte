@@ -110,7 +110,7 @@
 
 {#if sepettekiParolalar.length > 0}
 	<div id="basket">
-		<ShoppingBasket size={64} class="end-45 absolute top-1 z-10 text-accent" />
+		<ShoppingBasket size={32} class="end-45 absolute top-1 z-10 text-accent" />
 		<ul>
 			{#each sepettekiParolalar as parola}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->

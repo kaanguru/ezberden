@@ -201,23 +201,7 @@
 		</div>
 	{/if}
 
-	{#if fotoAlertAlaniAcik && smallPhotoURL}
-		<div class="satir max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
-			<small
-				><span class="m-3 font-bold">{sepettekiParola.split(standrt ? '-' : aralklr)[1]}</span> kelimesini
-				hatırlamanıza yardımcı olacağını düşündüğümüz bir fotoğraf</small
-			>
-			<img
-				class="m-2"
-				src={smallPhotoURL}
-				alt={sepettekiParola.split(standrt ? '-' : aralklr)[1]}
-			/>
-			<hr />
-		</div>
-		<blockquote class="mt-16 border-l-2 pl-6 text-sm italic">
-			<a href="https://www.pexels.com">Photos provided by Pexels</a>
-		</blockquote>
-	{:else if fotoAlertAlaniAcik}
+	{#if fotoAlertAlaniAcik}
 		<div class="satir max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
 			<p class="mx-auto leading-7 [&:not(:first-child)]:mt-6">
 				Şifreyi hatırlamak için <span class="font-bold">

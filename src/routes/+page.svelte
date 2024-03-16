@@ -11,7 +11,9 @@
 		ScanSearch,
 		RefreshCw,
 		Timer,
-		ShoppingBasket
+		ShoppingBasket,
+		Trash2,
+		ClipboardCopy
 	} from 'lucide-svelte';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import * as Table from '$lib/components/ui/table';
@@ -107,6 +109,15 @@
 				${p}`
 		});
 	}
+
+	function sepettenCikar(parol) {
+		// Find the index of "parol" in sepettekiParolalar
+		const index = sepettekiParolalar.indexOf(parol);
+		// Remove it from the array
+		if (index !== -1) {
+			sepettekiParolalar = sepettekiParolalar.filter((p) => p !== parol);
+		}
+	}
 </script>
 
 {#if sepettekiParolalar.length > 0}
@@ -114,10 +125,14 @@
 		<ShoppingBasket size={30} class="end-45 absolute top-1 z-10 text-accent" />
 		<ul>
 			{#each sepettekiParolalar as parola}
-				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-				<li on:click={() => sepeteTiklama(parola)}>
+				<li>
+					<button on:click={() => sepeteTiklama(parola)} class="mt-2 pr-1 hover:text-accent">
+						<ClipboardCopy size={20} />
+					</button>
 					{parola}
+					<button on:click={() => sepettenCikar(parola)} class="pl-2 pt-1 hover:text-destructive">
+						<Trash2 size={16} />
+					</button>
 				</li>
 			{/each}
 		</ul>
@@ -284,16 +299,16 @@
 		@apply cursor-pointer font-bold text-secondary-foreground;
 	}
 	#basket > ul > li:first-child {
-		@apply rounded-t-lg;
+		@apply rounded-tl-lg;
 	}
 	#basket > ul > li {
 		@apply block w-full  border-b border-gray-200 px-4 py-2;
-		@apply hover:bg-gray-100 hover:text-accent;
+		@apply hover:bg-gray-100 hover:text-black;
 		@apply focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent;
 	}
 	#basket > ul li:last-child {
 		@apply block w-full border-b border-gray-200 bg-primary px-4 py-2 text-primary-foreground;
-		@apply rounded-b-lg hover:bg-gray-100 hover:text-accent;
+		@apply rounded-bl-lg;
 	}
 
 	.satir {

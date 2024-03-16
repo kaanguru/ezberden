@@ -26,8 +26,8 @@ test.describe('Parola üretim kontrolü', () => {
 	});
 
 	test('yeniden üret', async ({ page }) => {
-		await page.locator('#yeniden-uret').click();
 		yeniParolaAlan = await page.locator('#parola-alan').innerText();
+		await page.locator('#yeniden-uret').click();
 		expect(yeniParolaAlan).not.toBe(parolaAlan);
 		parolaAlan = yeniParolaAlan;
 	});

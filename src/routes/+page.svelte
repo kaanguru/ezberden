@@ -179,7 +179,7 @@
 	<div class="satir">
 		<Tooltip.Root>
 			<Tooltip.Trigger>
-				<Button variant="outline" size="icon" on:click={yenidenUret}>
+				<Button id="yeniden-uret" variant="outline" size="icon" on:click={yenidenUret}>
 					<RefreshCw />
 				</Button>
 			</Tooltip.Trigger>

@@ -4,7 +4,7 @@ let yeniParolaAlan: string;
 test.beforeEach(async ({ page }) => {
 	await page.goto('/');
 });
-test.describe.skip('Parola üretim kontrolü', () => {
+test.describe('Parola üretim kontrolü', () => {
 	test('parola-alan da 2 karakterden fazla yazı var', async ({ page }) => {
 		await expect(page.locator('#parola-alan')).toContainText(/[a-z]{3,}/i);
 		parolaAlan = await page.locator('#parola-alan').innerText();

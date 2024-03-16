@@ -13,13 +13,16 @@
 		Timer,
 		ShoppingBasket,
 		Trash2,
-		ClipboardCopy
+		ClipboardCopy,
+		Info
 	} from 'lucide-svelte';
 	import { Checkbox } from '$lib/components/ui/checkbox';
 	import * as Table from '$lib/components/ui/table';
+	import { Slider } from '$lib/components/ui/slider';
 	import { toast } from 'svelte-sonner';
 	import { parolaUret } from 'ezberlenen-parola';
 	import zxcvbn from 'zxcvbn';
+	import { goto } from '$app/navigation';
 
 	let kelmSays = 3;
 	let standrt = false;
@@ -53,9 +56,8 @@
 		}
 
 		clipboardaKopyala(sepettekiSon);
-		toast.success('panoya kopyalandı', {
-			description: `Ezberlenecek parolanız: 
-				${sepettekiSon}`
+		toast.success(sepettekiSon, {
+			description: 'panoya kopyalandı'
 		});
 	}
 
@@ -105,8 +107,7 @@
 		clipboardaKopyala(p);
 		active = true;
 		toast.success('panoya kopyalandı', {
-			description: `Ezberlenecek parolanız: 
-				${p}`
+			description: `${p}`
 		});
 	}
 
@@ -120,6 +121,9 @@
 	}
 </script>
 
+<Button on:click={() => goto('/about')} size="icon" class="mx-2 h-5 w-5"
+	><Info size="icon" /></Button
+>
 {#if sepettekiParolalar.length > 0}
 	<div id="basket">
 		<ShoppingBasket size={30} class="end-45 absolute top-1 z-10 text-accent" />
@@ -147,9 +151,9 @@
 	<div class="satir">
 		<input
 			id="kelimeSayisi"
-			class="mr-1 max-w-9 rounded-lg bg-secondary px-1 py-2 dark:bg-primary"
+			class="text-weight-bold mr-1 max-w-12 rounded-lg bg-secondary px-2 py-2 text-center dark:bg-primary"
 			type="number"
-			max={6}
+			max={5}
 			min={2}
 			bind:value={kelmSays}
 		/>
@@ -174,12 +178,14 @@
 	</div>
 	<h2 class="satir mb-5">kolay ezberlenecek bir parola</h2>
 	<div class="satir">
-		<div id="parola-alan" class="m-2 bg-primary p-2 text-primary-foreground">{uretilenParola}</div>
+		<div id="parola-alan" class="my-3 bg-primary p-2 text-xl text-primary-foreground">
+			{uretilenParola}
+		</div>
 	</div>
-	<div class="satir">
+	<div class="mx-auto my-8 flex max-w-60 justify-between">
 		<Tooltip.Root>
 			<Tooltip.Trigger>
-				<Button id="yeniden-uret" variant="outline" size="icon" on:click={yenidenUret}>
+				<Button id="yeniden-uret" size="lg" on:click={yenidenUret}>
 					<RefreshCw />
 				</Button>
 			</Tooltip.Trigger>
@@ -190,7 +196,7 @@
 
 		<Tooltip.Root>
 			<Tooltip.Trigger>
-				<Button variant="outline" size="icon" on:click={sepeteKopyala}>
+				<Button size="lg" on:click={sepeteKopyala}>
 					<img class="dark:bg-primary" src="/Reminder.png" width="32" alt="Copy to clipboard" />
 				</Button>
 			</Tooltip.Trigger>
@@ -266,7 +272,7 @@
 						<Table.Cell class="text-right">{ceviri(crackTimes[2])}</Table.Cell>
 					</Table.Row>
 					<Table.Row>
-						<Table.Cell class="font-medium">Saniyede 10 milyar denemeyle (çevrimdışı)</Table.Cell>
+						<Table.Cell class="font-medium">Saniyede 10 milyon denemeyle (çevrimdışı)</Table.Cell>
 
 						<Table.Cell class="text-right">{ceviri(crackTimes[3])}</Table.Cell>
 					</Table.Row>
@@ -312,7 +318,7 @@
 	}
 
 	.satir {
-		@apply mx-auto flex items-center justify-center pt-4;
+		@apply mx-auto flex items-center justify-center  pt-4;
 	}
 	h2 {
 		@apply text-lg font-semibold;

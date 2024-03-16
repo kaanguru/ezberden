@@ -18,5 +18,35 @@
 	/>
 	<span class="sr-only">Toggle theme</span>
 </Button>
-<Toaster position="top-center" />
+
+<Toaster position="top-right" />
 <slot />
+<footer class="mt-9 text-center text-xl text-muted-foreground">
+	<div class="flex justify-center">
+		<a
+			href="https://www.npmjs.com/package/ezberlenen-parola"
+			target="_blank"
+			rel="noopener noreferrer"
+			><img alt="NPM Version" src="https://img.shields.io/npm/v/ezberlenen-parola" />
+		</a>
+		<a
+			href="https://www.npmjs.com/package/ezberlenen-parola"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<img
+				alt="jsDelivr hits (npm)"
+				class="mx-2"
+				src="https://img.shields.io/jsdelivr/npm/hm/ezberlenen-parola"
+			/>
+		</a>
+	</div>
+	<a
+		href="https://www.npmjs.com/package/ezberlenen-parola"
+		target="_blank"
+		rel="noopener noreferrer"
+		class="text-xs"
+	>
+		Ezberlenen Parola NPM Paketi kullanılmıştır</a
+	>
+</footer>

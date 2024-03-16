@@ -41,10 +41,15 @@
 		uretilenParola = parolaUret(secenekler);
 	}
 	async function sepeteKopyala() {
-		const sepettekiSon = sepettekiParolalar[sepettekiParolalar.length - 1];
-		if (sepettekiSon !== uretilenParola) {
+		const sepettekiSon =
+			sepettekiParolalar.length == 0
+				? uretilenParola
+				: sepettekiParolalar[sepettekiParolalar.length - 1];
+
+		if (sepettekiSon !== uretilenParola || sepettekiParolalar.length == 0) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
+		console.log('ℹ  ~ sepeteKopyala ~ sepettekiSon:', sepettekiSon);
 
 		clipboardaKopyala(sepettekiSon);
 		toast.success('panoya kopyalandı', {

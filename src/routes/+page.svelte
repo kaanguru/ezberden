@@ -49,7 +49,6 @@
 		if (sepettekiSon !== uretilenParola || sepettekiParolalar.length == 0) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
-		console.log('ℹ  ~ sepeteKopyala ~ sepettekiSon:', sepettekiSon);
 
 		clipboardaKopyala(sepettekiSon);
 		toast.success('panoya kopyalandı', {

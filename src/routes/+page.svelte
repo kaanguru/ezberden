@@ -22,7 +22,6 @@
 	let kelmSays = 3;
 	let standrt = false;
 	let aralklr = ' ';
-	let kopyalaAlertAlaniAcik = false;
 	let direncAlertAlaniAcik = false;
 	let fotoAlertAlaniAcik = false;
 	let crackTimes: string[] = [];
@@ -36,17 +35,21 @@
 			: '';
 
 	function yenidenUret() {
-		kopyalaAlertAlaniAcik = false;
 		direncAlertAlaniAcik = false;
 		fotoAlertAlaniAcik = false;
 		// sepettekiParola = '';
 		uretilenParola = parolaUret(secenekler);
 	}
 	async function sepeteKopyala() {
-		const sepettekiSon = sepettekiParolalar[sepettekiParolalar.length - 1];
-		if (sepettekiSon !== uretilenParola) {
+		const sepettekiSon =
+			sepettekiParolalar.length == 0
+				? uretilenParola
+				: sepettekiParolalar[sepettekiParolalar.length - 1];
+
+		if (sepettekiSon !== uretilenParola || sepettekiParolalar.length == 0) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
+		console.log('ℹ  ~ sepeteKopyala ~ sepettekiSon:', sepettekiSon);
 
 		clipboardaKopyala(sepettekiSon);
 		toast.success('panoya kopyalandı', {
@@ -102,6 +105,8 @@
 		active = true;
 		toast.success('panoya kopyalandı', {
 			description: `Ezberlenecek parolanız: 
+				console.log("ℹ  ~ sepeteKopyala ~ sepettekiSon:", sepettekiSon);
+
 				${p}`
 		});
 	}
@@ -140,17 +145,20 @@
 		<Checkbox id="standartlar" class="mx-1 bg-secondary dark:bg-primary" bind:checked={standrt} />
 		<span>Standartlara Uygun</span>
 	</div>
-	<div class="satir">
-		kelime aralarında
-		<Input
-			id="araliklar"
-			class="mx-2 max-w-8 bg-secondary dark:bg-primary"
-			type="text"
-			bind:value={aralklr}
-			maxlength={2}
-		/>
-		karakteri olan <br />
-	</div>
+
+	{#if !standrt}
+		<div class="satir">
+			kelime aralarında
+			<Input
+				id="araliklar"
+				class="mx-2 max-w-8 bg-secondary dark:bg-primary"
+				type="text"
+				bind:value={aralklr}
+				maxlength={2}
+			/>
+			karakteri olan <br />
+		</div>
+	{/if}
 	<h2 class="satir mb-5">kolay ezberlenecek bir parola</h2>
 	<div class="satir">
 		<div id="parola-alan" class="m-2 bg-primary p-2 text-primary-foreground">{uretilenParola}</div>
@@ -158,7 +166,7 @@
 	<div class="satir">
 		<Tooltip.Root>
 			<Tooltip.Trigger>
-				<Button variant="outline" size="icon" on:click={yenidenUret}>
+				<Button id="yeniden-uret" variant="outline" size="icon" on:click={yenidenUret}>
 					<RefreshCw />
 				</Button>
 			</Tooltip.Trigger>
@@ -169,8 +177,8 @@
 
 		<Tooltip.Root>
 			<Tooltip.Trigger>
-				<Button variant="outline" size="icon" on:click={sepeteKopyala}>
-					<img class="dark:bg-primary" src="/Reminder.png" width="32" alt="Copy to clipboard" />
+				<Button id="sepete-kopyala" variant="outline" size="icon" on:click={sepeteKopyala}>
+					<img class="dark:bg-primary" src="/Reminder.png" width="32" alt="hafızaya kopyala" />
 				</Button>
 			</Tooltip.Trigger>
 			<Tooltip.Content>
@@ -178,12 +186,12 @@
 			</Tooltip.Content>
 		</Tooltip.Root>
 	</div>
-	{#if sepettekiParolalar.length > 0}
+	{#if sepettekiParolalar.length > 0 && parolaOznesi.length > 3}
 		<div class="satir b mb-4">
 			<!-- foto -->
 			<Tooltip.Root>
 				<Tooltip.Trigger>
-					<Button variant="outline" size="icon" on:click={fotoAlaniGoster}>
+					<Button id="foto-alani-goster" variant="outline" size="icon" on:click={fotoAlaniGoster}>
 						<ImageDown />
 					</Button>
 				</Tooltip.Trigger>
@@ -205,7 +213,7 @@
 		</div>
 	{/if}
 
-	{#if fotoAlertAlaniAcik}
+	{#if fotoAlertAlaniAcik && parolaOznesi.length > 3}
 		<div class="satir max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
 			<p class="mx-auto leading-7 [&:not(:first-child)]:mt-6">
 				Şifreyi hatırlamak için <span class="font-bold">
@@ -217,7 +225,7 @@
 				href="https://duckduckgo.com/?q={parolaOznesi}&t=newext&atb=v410-1&iax=images&ia=images"
 				target="_blank"
 				rel="noopener noreferrer"
-				><Button variant="secondary">
+				><Button id="fotografla-bul" variant="secondary">
 					<ScanSearch class="mr-2 h-4 w-4" />
 					{parolaOznesi} Ara
 				</Button>
@@ -251,20 +259,6 @@
 					</Table.Row>
 				</Table.Body>
 			</Table.Root>
-		</div>
-	{/if}
-
-	{#if kopyalaAlertAlaniAcik}
-		<div class="mx-auto max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
-			<Alert.Root>
-				<ClipboardCheck class="h-4 w-4" />
-				<Alert.Title><ThumbsUp /></Alert.Title>
-				<Alert.Description
-					>Ezberlenecek parolanız: <span class="font-bold"
-						>{sepettekiParolalar[sepettekiParolalar.length - 1]}</span
-					> panoya kopyalandı</Alert.Description
-				>
-			</Alert.Root>
 		</div>
 	{/if}
 </div>

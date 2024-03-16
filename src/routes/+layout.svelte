@@ -19,7 +19,7 @@
 	<span class="sr-only">Toggle theme</span>
 </Button>
 
-<Toaster position="top-right" />
+<Toaster position="bottom-right" />
 <slot />
 <footer class="mt-9 text-center text-xl text-muted-foreground">
 	<div class="flex justify-center">

@@ -165,17 +165,19 @@
 		/>
 		<span>standartlara uygun</span>
 	</div>
-	<div class="satir">
-		kelime aralarında
-		<Input
-			id="araliklar"
-			class="mx-2 max-w-8 bg-secondary dark:bg-primary"
-			type="text"
-			bind:value={aralklr}
-			maxlength={2}
-		/>
-		karakteri olan <br />
-	</div>
+	{#if !standrt}
+		<div class="satir">
+			kelime aralarında
+			<Input
+				id="araliklar"
+				class="mx-2 max-w-8 bg-secondary dark:bg-primary"
+				type="text"
+				bind:value={aralklr}
+				maxlength={2}
+			/>
+			karakteri olan <br />
+		</div>
+	{/if}
 	<h2 class="satir mb-5">kolay ezberlenecek bir parola</h2>
 	<div class="satir">
 		<div id="parola-alan" class="my-3 bg-primary p-2 text-xl text-primary-foreground">

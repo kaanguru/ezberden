@@ -49,7 +49,6 @@
 		if (sepettekiSon !== uretilenParola || sepettekiParolalar.length == 0) {
 			sepettekiParolalar = [...sepettekiParolalar, uretilenParola];
 		}
-		console.log('ℹ  ~ sepeteKopyala ~ sepettekiSon:', sepettekiSon);
 
 		clipboardaKopyala(sepettekiSon);
 		toast.success('panoya kopyalandı', {
@@ -105,8 +104,6 @@
 		active = true;
 		toast.success('panoya kopyalandı', {
 			description: `Ezberlenecek parolanız: 
-				console.log("ℹ  ~ sepeteKopyala ~ sepettekiSon:", sepettekiSon);
-
 				${p}`
 		});
 	}
@@ -142,23 +139,25 @@
 			bind:value={kelmSays}
 		/>
 		<span class="mx-1">kelimelik,</span>
-		<Checkbox id="standartlar" class="mx-1 bg-secondary dark:bg-primary" bind:checked={standrt} />
-		<span>Standartlara Uygun</span>
+		<Checkbox
+			id="standartlar-checkbox"
+			class="mx-1 bg-secondary dark:bg-primary"
+			bind:checked={standrt}
+		/>
+		<span>standartlara uygun</span>
 	</div>
 
-	{#if !standrt}
-		<div class="satir">
-			kelime aralarında
-			<Input
-				id="araliklar"
-				class="mx-2 max-w-8 bg-secondary dark:bg-primary"
-				type="text"
-				bind:value={aralklr}
-				maxlength={2}
-			/>
-			karakteri olan <br />
-		</div>
-	{/if}
+	<div class="satir">
+		kelime aralarında
+		<Input
+			id="araliklar"
+			class="mx-2 max-w-8 bg-secondary dark:bg-primary"
+			type="text"
+			bind:value={aralklr}
+			maxlength={2}
+		/>
+		karakteri olan <br />
+	</div>
 	<h2 class="satir mb-5">kolay ezberlenecek bir parola</h2>
 	<div class="satir">
 		<div id="parola-alan" class="m-2 bg-primary p-2 text-primary-foreground">{uretilenParola}</div>
@@ -186,7 +185,7 @@
 			</Tooltip.Content>
 		</Tooltip.Root>
 	</div>
-	{#if sepettekiParolalar.length > 0 && parolaOznesi.length > 3}
+	{#if sepettekiParolalar.length > 0 && parolaOznesi !== undefined}
 		<div class="satir b mb-4">
 			<!-- foto -->
 			<Tooltip.Root>
@@ -213,7 +212,7 @@
 		</div>
 	{/if}
 
-	{#if fotoAlertAlaniAcik && parolaOznesi.length > 3}
+	{#if fotoAlertAlaniAcik && parolaOznesi !== undefined}
 		<div class="satir max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
 			<p class="mx-auto leading-7 [&:not(:first-child)]:mt-6">
 				Şifreyi hatırlamak için <span class="font-bold">

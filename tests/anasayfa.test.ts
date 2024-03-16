@@ -32,12 +32,12 @@ test.describe('Parola üretim kontrolü', () => {
 		parolaAlan = yeniParolaAlan;
 	});
 	test('standartlar', async ({ page }) => {
-		await page.locator('#standartlar').click();
+		await page.locator('#standartlar-checkbox').click();
 		yeniParolaAlan = await page.locator('#parola-alan').innerText();
 		expect(yeniParolaAlan).toMatch(/-/g);
 		expect(yeniParolaAlan).not.toBe(parolaAlan);
 		parolaAlan = yeniParolaAlan;
-		await page.locator('#standartlar').click();
+		await page.locator('#standartlar-checkbox').click();
 		yeniParolaAlan = await page.locator('#parola-alan').innerText();
 		expect(yeniParolaAlan).not.toMatch(/-/g);
 		expect(yeniParolaAlan).not.toBe(parolaAlan);

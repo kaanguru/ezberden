@@ -1,7 +1,21 @@
 {
 	"name": "yeniden-ezberden",
 	"version": "0.0.1",
-	"private": true,
+	"license": "LGPL-3.0",
+	"description": "🔑Local password generator",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kaanguru/ezberden",
+		"homepage": "https://www.cemkaan.com"
+	},
+	"keywords": [
+		"passwords",
+		"Generator"
+	],
+	"author": "Cem Kaan Kösalı",
+	"authors": [
+		"Cem Kaan Kösalı"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",

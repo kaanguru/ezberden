@@ -142,10 +142,6 @@
 		/>
 		<span>standartlara uygun</span>
 	</div>
-<<<<<<< HEAD
-=======
-
->>>>>>> c2edc04f6eab3b987e3a8555cd0110f9228bfff5
 	<div class="satir">
 		kelime aralarında
 		<Input
@@ -184,11 +180,7 @@
 			</Tooltip.Content>
 		</Tooltip.Root>
 	</div>
-<<<<<<< HEAD
-	{#if sepettekiParolalar.length > 0}
-=======
 	{#if sepettekiParolalar.length > 0 && parolaOznesi !== undefined}
->>>>>>> c2edc04f6eab3b987e3a8555cd0110f9228bfff5
 		<div class="satir b mb-4">
 			<!-- foto -->
 			<Tooltip.Root>
@@ -215,11 +207,7 @@
 		</div>
 	{/if}
 
-<<<<<<< HEAD
-	{#if fotoAlertAlaniAcik}
-=======
 	{#if fotoAlertAlaniAcik && parolaOznesi !== undefined}
->>>>>>> c2edc04f6eab3b987e3a8555cd0110f9228bfff5
 		<div class="satir max-w-md" transition:fade={{ delay: 250, duration: 300 }}>
 			<p class="mx-auto leading-7 [&:not(:first-child)]:mt-6">
 				Şifreyi hatırlamak için <span class="font-bold">

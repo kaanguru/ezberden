@@ -1,6 +1,6 @@
 {
-	"name": "yeniden-ezberden",
-	"version": "0.0.1",
+	"name": "ezberden",
+	"version": "0.0.2",
 	"license": "LGPL-3.0",
 	"description": "🔑Local password generator",
 	"repository": {
@@ -59,7 +59,7 @@
 	"dependencies": {
 		"bits-ui": "^0.19.7",
 		"clsx": "^2.1.0",
-		"ezberlenen-parola": "^0.3.8",
+		"ezberlenen-parola": "^0.3.9",
 		"lucide-svelte": "^0.358.0",
 		"mode-watcher": "^0.3.0",
 		"pexels": "^1.4.0",

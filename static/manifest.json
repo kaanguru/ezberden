@@ -1,0 +1,22 @@
+{
+	"theme_color": "#023047",
+	"background_color": "#219ebc",
+	"icons": [
+		{
+			"purpose": "maskable",
+			"sizes": "512x512",
+			"src": "icon512_maskable.png",
+			"type": "image/png"
+		},
+		{ "purpose": "any", "sizes": "512x512", "src": "icon512_rounded.png", "type": "image/png" }
+	],
+	"orientation": "any",
+	"display": "standalone",
+	"dir": "auto",
+	"lang": "tr-TR",
+	"name": "Ezberden Parola",
+	"short_name": "ezberden",
+	"start_url": "https://ezberden.vercel.app/",
+	"description": "Türkçe'de kolay hatırlanabilen cümlelerden yola çıkarak çok güvenli şifreler oluşturun.",
+	"id": "com.cemkaan.ezberden"
+}

@@ -30,13 +30,13 @@
 			</h2>
 			<h2>Neden daha güvenli?</h2>
 			<div class="ornek">
-				<h4>Gergin-deniz-aslani-gidiyor</h4>
+				<h4>Gergin-deniz-aslani-geliyor</h4>
 				<img
 					alt="Static Badge"
 					src="https://img.shields.io/badge/G%C3%BC%C3%A7_Puan%C4%B1-5-green"
 				/>
 				<p>Kaba kuvvet (bruteforce) ve Sözlük saldırıları ile kırılması neredeyse imkânsızdır.</p>
-				<img src="/img/kacan-deniz-aslani.webp" alt="Gergin-deniz-aslani-gidiyor" />
+				<img src="/img/kacan-deniz-aslani.webp" alt="Gergin-deniz-aslani-geliyor" />
 				<small class="text-sm font-medium leading-none">
 					Gergin-deniz-aslani-gidiyor Kırılması için gereken süre</small
 				>

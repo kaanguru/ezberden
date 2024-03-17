@@ -121,7 +121,7 @@
 	}
 </script>
 
-<Button on:click={() => goto('/about')} size="icon" class="mx-2 h-5 w-5"
+<Button on:click={() => goto('/about')} size="icon" class="mx-2 h-5 w-5" aria-label="Bilgi"
 	><Info size="icon" /></Button
 >
 {#if sepettekiParolalar.length > 0}
@@ -144,11 +144,15 @@
 {/if}
 <div class="container mx-auto justify-center">
 	<div id="logo" class="mb-5">
-		<img class="mx-auto hidden max-h-20 dark:block" src="/ezberden-dark.png" alt="ezberden logo" />
-		<img class="mx-auto max-h-20 dark:hidden" src="/ezberden-light.png" alt="ezberden logo" />
+		<img
+			class="mx-auto hidden max-h-20 dark:block"
+			src="/img/ezberden-dark.png"
+			alt="ezberden logo"
+		/>
+		<img class="mx-auto max-h-20 dark:hidden" src="/img/ezberden-light.png" alt="ezberden logo" />
 	</div>
 
-	<div class="satir">
+	<div class="satir font-mono">
 		<input
 			id="kelimeSayisi"
 			class="text-weight-bold mr-1 max-w-12 rounded-lg bg-secondary px-2 py-2 text-center dark:bg-primary"
@@ -161,12 +165,13 @@
 		<Checkbox
 			id="standartlar-checkbox"
 			class="mx-1 bg-secondary dark:bg-primary"
+			aria-label="standartlara uygun"
 			bind:checked={standrt}
 		/>
 		<span>standartlara uygun</span>
 	</div>
 	{#if !standrt}
-		<div class="satir">
+		<div class="satir font-mono">
 			kelime aralarında
 			<Input
 				id="araliklar"
@@ -178,16 +183,16 @@
 			karakteri olan <br />
 		</div>
 	{/if}
-	<h2 class="satir mb-5">kolay ezberlenecek bir parola</h2>
+	<h2 class="satir my-5">kolay ezberlenecek bir parola</h2>
 	<div class="satir">
 		<div id="parola-alan" class="my-3 bg-primary p-2 text-xl text-primary-foreground">
 			{uretilenParola}
 		</div>
 	</div>
-	<div class="mx-auto my-8 flex max-w-60 justify-between">
+	<div class="anaDugmeler">
 		<Tooltip.Root>
 			<Tooltip.Trigger>
-				<Button id="yeniden-uret" size="lg" on:click={yenidenUret}>
+				<Button id="yeniden-uret" size="lg" on:click={yenidenUret} aria-label="yeniden üret">
 					<RefreshCw />
 				</Button>
 			</Tooltip.Trigger>
@@ -198,8 +203,19 @@
 
 		<Tooltip.Root>
 			<Tooltip.Trigger>
-				<Button size="lg" on:click={sepeteKopyala}>
-					<img class="dark:bg-primary" src="/Reminder.png" width="32" alt="Copy to clipboard" />
+				<Button size="lg" on:click={sepeteKopyala} aria-label="sepete kopyala">
+					<img
+						class="hidden dark:block dark:bg-primary"
+						src="/img/reminder-blue.png"
+						width="32"
+						alt="Copy to clipboard"
+					/>
+					<img
+						class="block dark:hidden dark:bg-primary"
+						src="/img/reminder-orange.png"
+						width="32"
+						alt="Copy to clipboard"
+					/>
 				</Button>
 			</Tooltip.Trigger>
 			<Tooltip.Content>
@@ -300,7 +316,7 @@
 
 <style>
 	#basket {
-		@apply absolute right-0 top-0 w-1/3 rounded-lg border;
+		@apply absolute right-0 top-0 rounded-lg border md:w-1/3;
 		@apply border-gray-200 text-right text-sm;
 	}
 	#basket > ul {
@@ -310,7 +326,7 @@
 		@apply rounded-tl-lg;
 	}
 	#basket > ul > li {
-		@apply block w-full  border-b border-gray-200 px-4 py-2;
+		@apply border-b border-gray-200 bg-blue-50 px-4 py-2;
 		@apply hover:bg-gray-100 hover:text-black;
 		@apply focus:text-accent focus:outline-none focus:ring-2 focus:ring-accent;
 	}
@@ -324,5 +340,13 @@
 	}
 	h2 {
 		@apply text-lg font-semibold;
+	}
+	.anaDugmeler {
+		@apply mx-auto my-8 flex max-w-60 justify-between;
+	}
+	.font-mono {
+		font-family: 'Courier Prime', monospace;
+		font-weight: 400;
+		font-style: normal;
 	}
 </style>

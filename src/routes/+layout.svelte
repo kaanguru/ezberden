@@ -5,6 +5,8 @@
 	import Sun from 'lucide-svelte/icons/sun';
 	import Moon from 'lucide-svelte/icons/moon';
 	import { Toaster } from '$lib/components/ui/sonner';
+	import '@fontsource/courier-prime';
+	import '@fontsource/caudex';
 </script>
 
 <ModeWatcher />

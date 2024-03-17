@@ -1,20 +1,20 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { Button } from '$lib/components/ui/button/';
-	import { BrainCircuit } from 'lucide-svelte';
+	import { BrainCircuit, Youtube } from 'lucide-svelte';
 </script>
 
-<Button on:click={() => goto('/')} size="icon" class="mx-2 h-5 w-5">
-	<img class="hidden dark:block" src="/favicon-32x32.png" alt="logo" />
-	<img class="block dark:hidden" src="/favicon-32x32-inv.png" alt="logo" />
+<Button on:click={() => goto('/')} size="icon" class="mx-2 h-5 w-5" aria-label="home">
+	<img class="hidden dark:block" src="/img/favicon-32x32.png" alt="logo" />
+	<img class="block dark:hidden" src="/img/favicon-32x32-inv.png" alt="logo" />
 </Button>
 <div class="container mx-auto justify-center">
 	<div id="logo" class="mx-auto mb-5">
-		<button on:click={() => goto('/')} class="mx-auto hidden dark:block">
-			<img src="/ezberden-dark.png" alt="ezberden logo" />
+		<button on:click={() => goto('/')} class="mx-auto hidden dark:block" aria-label="home">
+			<img src="/img/ezberden-dark.png" alt="ezberden logo" />
 		</button>
-		<button on:click={() => goto('/')} class="mx-auto block dark:hidden">
-			<img src="/ezberden-light.png" alt="ezberden logo" />
+		<button on:click={() => goto('/')} class="mx-auto block dark:hidden" aria-label="home">
+			<img src="/img/ezberden-light.png" alt="ezberden logo" />
 		</button>
 	</div>
 	<div class="flex flex-col">
@@ -38,22 +38,33 @@
 				duygusal bir tepki uyandırır. Bu da, bilgilerin daha güçlü bir şekilde kodlanmasını ve daha
 				kolay hatırlanmasını sağlar.
 			</p>
-			<ul>
-				<BrainCircuit />
-				<li>İnsan beyni, bilgileri birbirleriyle ilişkilendirerek hatırlar.</li>
-				<li>
-					Hayal ettiğimiz sıradışı hikayeler, bilgileri birbirleriyle ilişkilendirmenin etkili bir
-					yoludur.
-				</li>
-				<li>Sıradışı hikayeler, beynimizin dikkatini çeker ve duygusal bir tepki uyandırır.</li>
-				<li>
-					Bu da, bilgilerin daha güçlü bir şekilde kodlanmasını ve daha kolay hatırlanmasını sağlar.
-				</li>
-			</ul>
+
 			<h2>
 				<BrainCircuit class="h-23 w-23 mx-auto my-5 text-4xl font-bold" />
 			</h2>
 			<h2>Neden daha güvenli?</h2>
+			<div class="ornek">
+				<h4>Gergin-deniz-aslani-gidiyor</h4>
+				<img
+					alt="Static Badge"
+					src="https://img.shields.io/badge/G%C3%BC%C3%A7_Puan%C4%B1-5-green"
+				/>
+				<p>Kaba kuvvet (bruteforce) ve Sözlük saldırıları ile kırılması neredeyse imkânsızdır.</p>
+				<img src="/img/kacan-deniz-aslani.webp" alt="Gergin-deniz-aslani-gidiyor" />
+				<small class="text-sm font-medium leading-none">
+					Gergin-deniz-aslani-gidiyor Kırılması için gereken süre</small
+				>
+				<ul>
+					<li>saatte 100 deneme: yüzyıllar</li>
+					<li>saniyede 10 deneme: yüzyıllar</li>
+					<li>saniyede 10 bin deneme: yüzyıllar</li>
+					<li>saniyede 10 milyar deneme: yüzyıllar</li>
+				</ul>
+				<p>
+					Sadece "gergin" bir "deniz aslanının" nasıl "gideceğini" hayal edin. Aklınıza ilk iki
+					kullanımda yerleşecek.
+				</p>
+			</div>
 			<h3>Sıradan Parola Örnekleri</h3>
 			<div class="ornek">
 				<h4>Galatasaray</h4>
@@ -71,7 +82,7 @@
 				<h4>G4l4t4s4r4y</h4>
 				<img alt="Static Badge" src="https://img.shields.io/badge/G%C3%BC%C3%A7_Puan%C4%B1-2-red" />
 				<p>A harfini 4 ile değiştirmeniz pek işe yaramıyor.</p>
-				<img src="/g4l4t4s4r4y.webp" alt="g4l4t4s4r4y" />
+				<img src="/img/g4l4t4s4r4y.webp" alt="g4l4t4s4r4y" />
 				<p>
 					Kırılması için gereken süre, şifrenizi kırmak için saldırganların ne kadar istekli
 					olduklarına göre değişir.
@@ -133,24 +144,48 @@
 				Ezberlenen parolalar kullanım kolaylığı ve güvenliği yüksek olduğu için farklıdır.
 			</p>
 		</div>
-		<div class="ornek">
-			<h4>Ezberlenen Parola Örnekleri</h4>
-			<img alt="Static Badge" src="https://img.shields.io/badge/G%C3%BC%C3%A7_Puan%C4%B1-5-green" />
-			<p>Kaba kuvvet (bruteforce) ve Sözlük saldırıları ile kırılması neredeyse imkânsızdır.</p>
-			<img src="/kacan-deniz-aslani.webp" alt="Gergin-deniz-aslani-gidiyor" />
-			<small class="text-sm font-medium leading-none">
-				Gergin-deniz-aslani-gidiyor Kırılması için gereken süre</small
-			>
-			<ul>
-				<li>saatte 100 deneme: yüzyıllar</li>
-				<li>saniyede 10 deneme: yüzyıllar</li>
-				<li>saniyede 10 bin deneme: yüzyıllar</li>
-				<li>saniyede 10 milyar deneme: yüzyıllar</li>
-			</ul>
-			<p>
-				Sadece "gergin" bir "deniz aslanının" nasıl "gideceğini" hayal edin. Aklınıza ilk iki
-				kullanımda yerleşecek.
-			</p>
+	</div>
+	<div class="bilgi">
+		<h2>Konu ile ilgili kaynaklar</h2>
+
+		<div class="flex flex-wrap">
+			<div class="flex-1 pr-3">
+				<h3>Videolar</h3>
+				<ul>
+					<li class="text-primary">
+						<Youtube />
+						<a href="https://youtu.be/p7yN5vm0rK8" target="_blank" referrerpolicy="no-referrer"
+							>How to Build Sherlock's Mind Palace? The Method of Loci
+						</a>
+					</li>
+					<li>
+						<Youtube />
+						<a
+							href="https://www.youtube.com/watch?v=yOgAbKJGrTA"
+							target="_blank"
+							referrerpolicy="no-referrer"
+						>
+							How memories form and how we lose them - Catharine Young
+						</a>
+					</li>
+				</ul>
+				<ul>
+					<BrainCircuit />
+					<li>İnsan beyni, bilgileri birbirleriyle ilişkilendirerek hatırlar.</li>
+					<li>
+						Hayal ettiğimiz sıradışı hikayeler, bilgileri birbirleriyle ilişkilendirmenin etkili bir
+						yoludur.
+					</li>
+					<li>Sıradışı hikayeler, beynimizin dikkatini çeker ve duygusal bir tepki uyandırır.</li>
+					<li>
+						Bu da, bilgilerin daha güçlü bir şekilde kodlanmasını ve daha kolay hatırlanmasını
+						sağlar.
+					</li>
+				</ul>
+			</div>
+			<div class="flex-1">
+				<img src="/img/zihin-sarayi2.webp" alt="zihin sarayı" />
+			</div>
 		</div>
 	</div>
 </div>
@@ -161,5 +196,11 @@
 	}
 	ul {
 		@apply my-6 ml-6 list-none [&>li]:mt-2;
+		font-family: 'Courier Prime', monospace;
+		font-weight: 400;
+		font-style: normal;
+	}
+	li {
+		@apply my-3;
 	}
 </style>

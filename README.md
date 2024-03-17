@@ -2,13 +2,13 @@
 
 🔑 Şifreniz Hafızanızda
 
-![logo](static/ezberden-light.png)
+![logo](static/img/ezberden-light.png)
 
 ## Güvenli ve kullanımı kolay unutulmayan şifreler oluşturun
 
 Türkçe'de kolay hatırlanabilen cümlelerden yola çıkarak çok güvenli şifreler oluşturun.
 
-![kullanım](static/ezberden-parola.webp)
+![kullanım](static/img/ezberden-parola.webp)
 
 ## Örneğin
 
@@ -35,7 +35,3 @@ Bu yöntem, şifrelerinizi hem güvenli tutmanıza hem de kolayca hatırlamanız
 ## Belgeler
 
 [Üretilen Şifrelerin Kalitesini kontrol edebileceğiniz Test Platformu](<https://www.bennish.net/password-strength-checker/>)
-
-## Neden daha güvenli?
-
-![Hikayesi](/password_strength.webp)

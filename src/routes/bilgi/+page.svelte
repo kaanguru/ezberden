@@ -1,22 +1,8 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-	import { Button } from '$lib/components/ui/button/';
 	import { BrainCircuit, Youtube } from 'lucide-svelte';
 </script>
 
-<Button on:click={() => goto('/')} size="icon" class="mx-2 h-5 w-5" aria-label="home">
-	<img class="hidden dark:block" src="/img/favicon-32x32.png" alt="logo" />
-	<img class="block dark:hidden" src="/img/favicon-32x32-inv.png" alt="logo" />
-</Button>
 <div class="container mx-auto justify-center">
-	<div id="logo" class="mx-auto mb-5">
-		<button on:click={() => goto('/')} class="mx-auto hidden dark:block" aria-label="home">
-			<img src="/img/ezberden-dark.png" alt="ezberden logo" />
-		</button>
-		<button on:click={() => goto('/')} class="mx-auto block dark:hidden" aria-label="home">
-			<img src="/img/ezberden-light.png" alt="ezberden logo" />
-		</button>
-	</div>
 	<div class="flex flex-col">
 		<div>
 			<div class="text-center text-lg font-semibold">

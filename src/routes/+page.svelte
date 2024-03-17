@@ -121,12 +121,9 @@
 	}
 </script>
 
-<Button on:click={() => goto('/bilgi')} size="icon" class="mx-2 h-5 w-5" aria-label="Bilgi"
-	><Info size="icon" /></Button
->
 {#if sepettekiParolalar.length > 0}
 	<div id="basket">
-		<ShoppingBasket size={30} class="end-45 absolute top-1 z-10 text-accent" />
+		<ShoppingBasket size={22} class="end-45 absolute top-1 z-10 text-accent" />
 		<ul>
 			{#each sepettekiParolalar as parola}
 				<li>
@@ -143,15 +140,6 @@
 	</div>
 {/if}
 <div class="container mx-auto justify-center">
-	<div id="logo" class="mb-5">
-		<img
-			class="mx-auto hidden max-h-20 dark:block"
-			src="/img/ezberden-dark.png"
-			alt="ezberden logo"
-		/>
-		<img class="mx-auto max-h-20 dark:hidden" src="/img/ezberden-light.png" alt="ezberden logo" />
-	</div>
-
 	<div class="satir font-mono">
 		<input
 			id="kelimeSayisi"

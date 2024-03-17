@@ -7,48 +7,27 @@
 	import { Toaster } from '$lib/components/ui/sonner';
 	import '@fontsource/courier-prime';
 	import '@fontsource/caudex';
+	import Footer from '$lib/components/footer.svelte';
 </script>
 
 <ModeWatcher />
+<Toaster position="bottom-right" />
 
-<Button on:click={toggleMode} variant="outline" size="icon">
-	<Sun
-		class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-	/>
-	<Moon
-		class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-	/>
+<Button on:click={toggleMode} variant="outline" class="ml-2" size="icon">
+	<Sun class="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+	<Moon class="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
 	<span class="sr-only">Toggle theme</span>
 </Button>
+<div id="logo" class="mb-5">
+	<a href="/" aria-label="ana sayfaya git">
+		<img
+			class="mx-auto hidden max-h-20 dark:block"
+			src="/img/ezberden-dark.png"
+			alt="ezberden logo"
+		/>
+		<img class="mx-auto max-h-20 dark:hidden" src="/img/ezberden-light.png" alt="ezberden logo" />
+	</a>
+</div>
 
-<Toaster position="bottom-right" />
 <slot />
-<footer class="mt-9 text-center text-xl text-muted-foreground">
-	<div class="flex justify-center">
-		<a
-			href="https://www.npmjs.com/package/ezberlenen-parola"
-			target="_blank"
-			rel="noopener noreferrer"
-			><img alt="NPM Version" src="https://img.shields.io/npm/v/ezberlenen-parola" />
-		</a>
-		<a
-			href="https://www.npmjs.com/package/ezberlenen-parola"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<img
-				alt="jsDelivr hits (npm)"
-				class="mx-2"
-				src="https://img.shields.io/jsdelivr/npm/hm/ezberlenen-parola"
-			/>
-		</a>
-	</div>
-	<a
-		href="https://www.npmjs.com/package/ezberlenen-parola"
-		target="_blank"
-		rel="noopener noreferrer"
-		class="text-xs"
-	>
-		Ezberlenen Parola NPM Paketi kullanılmıştır</a
-	>
-</footer>
+<Footer />

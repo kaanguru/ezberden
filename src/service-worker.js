@@ -1,9 +1,13 @@
+/// <reference types="@sveltejs/kit" />
+/// <reference no-default-lib="true"/>
+/// <reference lib="esnext" />
+/// <reference lib="webworker" />
+
 if ('serviceWorker' in navigator) {
 	addEventListener('load', function () {
 		navigator.serviceWorker.register('/service-worker.js');
 	});
 }
-/// <reference types="@sveltejs/kit" />
 import { build, files, version } from '$service-worker';
 
 // Create a unique cache name for this deployment

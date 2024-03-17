@@ -156,11 +156,11 @@
 			aria-label="standartlara uygun"
 			bind:checked={standrt}
 		/>
-		<span>standartlara uygun</span>
+		<span>standart</span>
 	</div>
 	{#if !standrt}
 		<div class="satir font-mono">
-			kelime aralarında
+			aralarında
 			<Input
 				id="araliklar"
 				class="mx-2 max-w-8 bg-secondary dark:bg-primary"
@@ -168,12 +168,12 @@
 				bind:value={aralklr}
 				maxlength={2}
 			/>
-			karakteri olan <br />
+			olan <br />
 		</div>
 	{/if}
 	<h2 class="satir my-5">kolay ezberlenecek bir parola</h2>
 	<div class="satir">
-		<div id="parola-alan" class="my-3 bg-primary p-2 text-xl text-primary-foreground">
+		<div id="parola-alan" aria-label="üretilen parola">
 			{uretilenParola}
 		</div>
 	</div>
@@ -216,7 +216,13 @@
 			<!-- foto -->
 			<Tooltip.Root>
 				<Tooltip.Trigger>
-					<Button variant="outline" size="icon" on:click={fotoAlaniGoster}>
+					<Button
+						variant="outline"
+						size="icon"
+						on:click={fotoAlaniGoster}
+						aria-label="Esinlenebileceğin Fotoğraf ara"
+						class="mx-2"
+					>
 						<ImageDown />
 					</Button>
 				</Tooltip.Trigger>
@@ -227,7 +233,13 @@
 			<!-- DİRENÇ -->
 			<Tooltip.Root>
 				<Tooltip.Trigger>
-					<Button variant="outline" size="icon" on:click={direncAlaniGoster}>
+					<Button
+						variant="outline"
+						size="icon"
+						on:click={direncAlaniGoster}
+						aria-label="Direnç alanı göster"
+						class="mx-2"
+					>
 						<Timer />
 					</Button>
 				</Tooltip.Trigger>
@@ -336,5 +348,8 @@
 		font-family: 'Courier Prime', monospace;
 		font-weight: 400;
 		font-style: normal;
+	}
+	#parola-alan {
+		@apply my-3 bg-primary p-2 text-center text-xl text-primary-foreground;
 	}
 </style>

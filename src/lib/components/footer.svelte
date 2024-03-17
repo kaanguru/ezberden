@@ -24,25 +24,33 @@
 			/>
 		</a>
 	</div>
-	<Button on:click={() => goto('/bilgi')} size="sm" class="m-3 h-12 w-12 " aria-label="Bilgi"
-		><Info size="icon" /></Button
-	>
-	<a
-		href="https://www.npmjs.com/package/ezberlenen-parola"
-		target="_blank"
-		rel="noopener noreferrer"
-		class="text-xs"
-	>
-		Ezberlenen Parola NPM Paketi kullanılmıştır</a
-	>
-	<Button on:click={() => goto('/')} size="sm" class="m-3 h-12 w-12  " aria-label="home">
-		<img class="hidden dark:block" src="/img/favicon-32x32.png" width="32" height="32" alt="logo" />
-		<img
-			class="block dark:hidden"
-			src="/img/favicon-32x32-inv.png"
-			width="32"
-			height="32"
-			alt="logo"
-		/>
-	</Button>
+	<div class="flex justify-center">
+		<Button on:click={() => goto('/bilgi')} size="sm" class="m-3 h-12 w-12 " aria-label="Bilgi"
+			><Info size="icon" /></Button
+		>
+		<a
+			href="https://www.npmjs.com/package/ezberlenen-parola"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-xs"
+		>
+			Ezberlenen Parola NPM Paketi kullanılmıştır</a
+		>
+		<Button on:click={() => goto('/')} size="sm" class="m-3 h-12 w-12  " aria-label="home">
+			<img
+				class="hidden dark:block"
+				src="/img/favicon-32x32.png"
+				width="32"
+				height="32"
+				alt="logo"
+			/>
+			<img
+				class="block dark:hidden"
+				src="/img/favicon-32x32-inv.png"
+				width="32"
+				height="32"
+				alt="logo"
+			/>
+		</Button>
+	</div>
 </footer>

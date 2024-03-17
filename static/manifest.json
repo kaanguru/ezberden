@@ -26,14 +26,42 @@
 			"label": "Mobil Uygulama Ekranı"
 		}
 	],
-
+	"launch_handler": {
+		"client_mode": ["focus-existing", "auto"]
+	},
+	"categories": ["security", "education", "lifestyle"],
 	"orientation": "any",
 	"display": "standalone",
 	"dir": "auto",
+	"scope": "/",
 	"lang": "tr-TR",
 	"name": "Ezberden Parola",
 	"short_name": "ezberden",
 	"start_url": "/",
 	"description": "Türkçe'de kolay hatırlanabilen cümlelerden yola çıkarak çok güvenli şifreler oluşturun.",
-	"id": "com.cemkaan.ezberden"
+	"id": "com.cemkaan.ezberden",
+	"prefer_related_applications": true,
+	"related_applications": [
+		{
+			"platform": "play",
+			"url": "https://play.google.com/store/apps/details?id=com.aligkts.password.android",
+			"id": "com.aligkts.password.android"
+		},
+		{
+			"platform": "itunes",
+			"url": "https://apps.apple.com/us/app/lastpass-password-manager/id324613447"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "Bilgi Al",
+			"url": "/bilgi",
+			"description": "Parola nasıl üretilir?"
+		},
+		{
+			"name": "Parola Üret",
+			"url": "/",
+			"description": "Hatırlayabileceğiniz bir Parola üretin"
+		}
+	]
 }

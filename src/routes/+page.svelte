@@ -121,7 +121,7 @@
 	}
 </script>
 
-<Button on:click={() => goto('/about')} size="icon" class="mx-2 h-5 w-5" aria-label="Bilgi"
+<Button on:click={() => goto('/bilgi')} size="icon" class="mx-2 h-5 w-5" aria-label="Bilgi"
 	><Info size="icon" /></Button
 >
 {#if sepettekiParolalar.length > 0}

@@ -2,7 +2,7 @@
 	import { BrainCircuit, Youtube } from 'lucide-svelte';
 </script>
 
-<div class="container mx-auto justify-center">
+<div class="mx-auto justify-center md:container">
 	<div class="flex flex-col">
 		<div>
 			<div class="text-center text-lg font-semibold">
@@ -134,8 +134,8 @@
 	<div class="bilgi">
 		<h2>Konu ile ilgili kaynaklar</h2>
 
-		<div class="flex flex-wrap">
-			<div class="flex-1 pr-3">
+		<div class="flex flex-col lg:flex-row">
+			<div class=" pr-2">
 				<h3>Videolar</h3>
 				<ul>
 					<li class="text-primary">
@@ -169,7 +169,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="flex-1">
+			<div>
 				<img src="/img/zihin-sarayi2.webp" alt="zihin sarayı" />
 			</div>
 		</div>

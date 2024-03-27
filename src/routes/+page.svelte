@@ -140,7 +140,7 @@
 	</div>
 {/if}
 <div class="container mx-auto justify-center text-center">
-	<div class="m-2 p-3">
+	<div class="mb-2 p-1">
 		<p class=" text-xl text-muted-foreground">
 			%100 güvenli ve hiçbir zaman hiçbir sunucuda saklanmayacak...
 		</p>

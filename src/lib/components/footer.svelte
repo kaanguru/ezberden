@@ -42,7 +42,7 @@
 			<img
 				alt="Şimdi Üzüntümüzü Eyleme Dönüştürme Zamanı!"
 				class="mx-2"
-				src="/img/palestine-f.png"
+				src="/img/filistin-byr.webp"
 			/>
 			<p>Siyonizm Karşıtı Uygulama</p>
 		</a>

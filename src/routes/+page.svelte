@@ -139,19 +139,16 @@
 		</ul>
 	</div>
 {/if}
-<div class="container mx-auto justify-center">
-	<p class="p-2 text-center">
-		%100 güvenli ve hiçbir zaman hiçbir sunucuda saklanmayacak şifrelerinizi yerel olarak oluşturun.
-	</p>
+<div class="container mx-auto justify-center text-center">
+	<div class="m-2 p-3">
+		<p class=" text-xl text-muted-foreground">
+			%100 güvenli ve hiçbir zaman hiçbir sunucuda saklanmayacak...
+		</p>
+		<div class="text-lg font-semibold">şifrelerinizi cihazınızda oluşturun.</div>
+	</div>
+
 	<div class="satir font-mono">
-		<input
-			id="kelimeSayisi"
-			class="text-weight-bold mr-1 max-w-12 rounded-lg bg-secondary px-2 py-2 text-center dark:bg-primary"
-			type="number"
-			max={5}
-			min={2}
-			bind:value={kelmSays}
-		/>
+		<input id="kelimeSayisi" type="number" max={5} min={2} bind:value={kelmSays} />
 		<span class="mx-1">kelimelik,</span>
 		<Checkbox
 			id="standartlar-checkbox"
@@ -354,5 +351,9 @@
 	}
 	#parola-alan {
 		@apply my-3 bg-primary p-2 text-center text-xl text-primary-foreground;
+	}
+	#kelimeSayisi {
+		@apply mr-1 max-w-12 rounded-lg text-primary;
+		@apply px-2 py-2 text-center dark:bg-primary dark:text-primary-foreground;
 	}
 </style>

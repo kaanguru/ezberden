@@ -5,7 +5,7 @@
 </script>
 
 <footer class="mt-9 text-center text-xl text-muted-foreground">
-	<div class="flex justify-center">
+	<div class="flex flex-row justify-center">
 		<a
 			href="https://www.npmjs.com/package/ezberlenen-parola"
 			target="_blank"
@@ -24,10 +24,7 @@
 			/>
 		</a>
 	</div>
-	<div class="flex justify-center">
-		<Button on:click={() => goto('/bilgi')} size="sm" class="m-3 h-12 w-12 " aria-label="Bilgi"
-			><Info size="icon" /></Button
-		>
+	<div class="mb-4 flex-row">
 		<a
 			href="https://www.npmjs.com/package/ezberlenen-parola"
 			target="_blank"
@@ -36,6 +33,19 @@
 		>
 			Ezberlenen Parola NPM Paketi kullanılmıştır</a
 		>
+	</div>
+	<div class="flex flex-row justify-center">
+		<Button on:click={() => goto('/bilgi')} size="sm" class="m-3 h-12 w-12 " aria-label="Bilgi"
+			><Info size="icon" /></Button
+		>
+		<a href="https://boykotrehberi.com/" target="_blank" rel="noopener noreferrer" class="text-xs">
+			<img
+				alt="Şimdi Üzüntümüzü Eyleme Dönüştürme Zamanı!"
+				class="mx-2"
+				src="/img/palestine-f.png"
+			/>
+			<p>Siyonizm Karşıtı Uygulama</p>
+		</a>
 		<Button on:click={() => goto('/')} size="sm" class="m-3 h-12 w-12  " aria-label="home">
 			<img
 				class="hidden dark:block"

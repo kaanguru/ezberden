@@ -140,6 +140,9 @@
 	</div>
 {/if}
 <div class="container mx-auto justify-center">
+	<p class="p-2 text-center">
+		%100 güvenli ve hiçbir zaman hiçbir sunucuda saklanmayacak şifrelerinizi yerel olarak oluşturun.
+	</p>
 	<div class="satir font-mono">
 		<input
 			id="kelimeSayisi"

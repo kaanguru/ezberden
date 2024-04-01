@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "app.vercel.ezberden.twa",
+        "sha256_cert_fingerprints": ["58:5D:06:89:1C:25:C3:13:9F:B9:A8:BD:B7:64:9F:BD:13:93:CC:BD:41:F8:0E:2B:FA:87:15:59:02:2B:E5:48"]
+      }
+    }]

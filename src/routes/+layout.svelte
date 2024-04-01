@@ -10,6 +10,20 @@
 	import Footer from '$lib/components/footer.svelte';
 </script>
 
+<svelte:head>
+	<title>Ezberden Parola</title>
+	<meta property="og:title" content="Ezberden Parola" />
+	<meta property="og:site_name" content="Ezberden" />
+	<meta property="og:url" content="https://ezberden.vercel.app/" />
+	<meta
+		property="og:description"
+		content="Türkçe'de kolay hatırlanabilen cümlelerden yola çıkarak çok güvenli şifreler oluşturun."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://ezberden.vercel.app/img/ss-desktop.webp" />
+	<meta name="twitter:card" content="summary_large_image" />
+</svelte:head>
+
 <ModeWatcher />
 <Toaster position="bottom-right" />
 

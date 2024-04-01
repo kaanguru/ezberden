@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '../app.pcss';
 	import { ModeWatcher, toggleMode } from 'mode-watcher';
 	import { Button } from '$lib/components/ui/button/';

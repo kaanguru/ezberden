@@ -1,8 +1,13 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.vercel.ezberden.twa",
-        "sha256_cert_fingerprints": ["58:5D:06:89:1C:25:C3:13:9F:B9:A8:BD:B7:64:9F:BD:13:93:CC:BD:41:F8:0E:2B:FA:87:15:59:02:2B:E5:48"]
-      }
-    }]
+[
+	{
+		"relation": ["delegate_permission/common.handle_all_urls"],
+		"target": {
+			"namespace": "android_app",
+			"package_name": "app.vercel.ezberden.twa",
+			"sha256_cert_fingerprints": [
+				"58:5D:06:89:1C:25:C3:13:9F:B9:A8:BD:B7:64:9F:BD:13:93:CC:BD:41:F8:0E:2B:FA:87:15:59:02:2B:E5:48",
+				"7F:3A:C6:0C:1A:46:24:21:55:37:0D:EB:CD:8D:1B:F9:57:4E:EA:66:45:30:70:30:6F:4A:FC:2B:DE:60:E2:3C"
+			]
+		}
+	}
+]
